@@ -6,7 +6,6 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 		"cartalyst/sentry": "2.1.*",
-		"doctrine/dbal" : "2.4.*",
 		"teepluss/categorize": "dev-master"
 	},
 	"autoload": {

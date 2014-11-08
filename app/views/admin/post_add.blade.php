@@ -98,6 +98,16 @@
 	                              </div>
 	                           </div>
 	                           <div class="control-group">
+	                              <label class="control-label">所属分类</label>
+	                              <div class="controls">
+	                                 <select id="category_parent_id" class="span6 " name="category_parent_id" data-placeholder="Choose a Category" tabindex="1">
+	                                    <option value="0">顶级分类</option>
+	                                    {{$cates}}
+	                                 </select>
+	                                 {{ $errors->first('category_parent_id', '<span class="help-block">:message</span>') }}
+	                              </div>
+	                           </div>
+	                           <div class="control-group">
                                     <label class="control-label">发布日期</label>
                                     <div class="controls">
                                         <div class="input-append date date-picker" data-date="9-23-2014" data-date-format="dd-mm-yyyy" data-date-viewmode="years">

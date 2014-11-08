@@ -63,7 +63,7 @@
 	                     <div class="widget-body form">
 	                        <!-- BEGIN FORM-->
 	                        {{ Form::open(array(
-	                        	'route' => 'category.create',
+	                        	'route' => 'category.store',
 	                        	'id' => 'addform',
 	                        	'class' => 'form-horizontal', 
 	                        	'role' => 'form'
@@ -72,27 +72,32 @@
 	                           <div class="control-group">
 	                              <label class="control-label">分类名称</label>
 	                              <div class="controls">
-	                                 <input type="text" class="span6 popovers" id="username" name="username" data-trigger="hover" data-content="请输入分类名称。" data-original-title="提示" />
+	                                 <input type="text" class="span6 popovers" id="title" name="title" data-trigger="hover" data-content="请输入分类名称。" data-original-title="提示" />
+	                              	 {{ $errors->first('title', '<span class="help-block">:message</span>') }}
 	                              </div>
 	                           </div>
 	                           <div class="control-group">
 	                              <label class="control-label">类型</label>
 	                              <div class="controls">
 	                              	 <input id="type" type="text" name="type" placeholder="类型" />
+	                              	 {{ $errors->first('type', '<span class="help-block">:message</span>') }}
 	                              </div>
 	                           </div>
 	                           <div class="control-group">
 	                              <label class="control-label">描述</label>
 	                              <div class="controls">
 	                              	<input type="text" class="span6  popovers" id="description" name="description" data-trigger="hover" data-content="分类描述" data-original-title="提示" />
+	                              	{{ $errors->first('description', '<span class="help-block">:message</span>') }}
 	                              </div>
 	                           </div>
 	                           <div class="control-group">
 	                              <label class="control-label">上级分类</label>
 	                              <div class="controls">
-	                                 <select id="groupid" class="span6 " name="groupid" data-placeholder="Choose a Category" tabindex="1">
+	                                 <select id="category_parent_id" class="span6 " name="category_parent_id" data-placeholder="Choose a Category" tabindex="1">
 	                                    <option value="0">顶级分类</option>
+	                                    {{$cates}}
 	                                 </select>
+	                                 {{ $errors->first('category_parent_id', '<span class="help-block">:message</span>') }}
 	                              </div>
 	                           </div>
 	                           <div class="form-actions">
@@ -122,16 +127,15 @@
             //.....
             //show some spinner etc to indicate operation in progress
             //.....
-     
+
             $.post(
                 $( this ).prop( 'action' ),
                 {
                     "_token": $( this ).find( 'input[name=_token]' ).val(),
-                    "username": $( '#username' ).val(),
-                    "password": $( '#password' ).val(),
-                    "password_confirmation": $( '#password_confirmation' ).val(),
-                    "email":$( '#email' ).val(),
-                    "groupid":$( '#groupid' ).val(),
+                    "title": $( '#title' ).val(),
+                    "type": $( '#type' ).val(),
+                    "description": $( '#description' ).val(),
+                    "category_parent_id":$( '#category_parent_id' ).val(),
                 },
                 function(data,status) {
                     //do something with data/response returned by server
@@ -140,7 +144,6 @@
                 },
                 'json'
             );
-     
             //.....
             //do anything else you might want to do
             //.....

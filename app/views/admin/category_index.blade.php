@@ -89,10 +89,10 @@
                             <tbody>
                             	@foreach($cates as $cate)
                                 <tr class="odd gradeX">
-                                    <td><input type="checkbox" class="checkboxes" value="1" />{{$cate->id}}</td>
-                                    <td>{{$cate->title}}</td>
-                                    <td class="hidden-phone"><a href="{{$user->email}}">{{$cate->email}}</a></td>
-                                    <td class="hidden-phone">120</td>
+                                    <td><input type="checkbox" class="checkboxes" value="1" /></td>
+                                    <td>{{$cate->id}}</td>
+                                    <td class="hidden-phone"><a href="##">{{$cate->title}}</a></td>
+                                    <td class="hidden-phone">{{$cate->type}}</td>
                                     <td class="center hidden-phone">{{$cate->created_at}}</td>
                                     <td class="hidden-phone">
                                     	<a class="btn btn-primary" href="{{asset('admin/category/edit/'.$cate->id)}}"><i class="icon-pencil icon-white"></i> 修改</a>

@@ -11,6 +11,8 @@ use Post;
 use Redirect;
 use Auth;
 use Tag;
+use Category;
+use Categorize;
 class PostController extends \Controller{
 	
 	protected $layout = "layouts.main";
@@ -22,7 +24,9 @@ class PostController extends \Controller{
 	}
 	
 	public function add(){
-		return View::make('admin.post_add');
+		$categories = Categorize::getCategoryProvider()->root()->get();
+		$cates = $this->showTree(Categorize::tree($categories)->toArray(),'--');
+		return View::make('admin.post_add')->withCates($cates);
 	}
 	
 	public function create(){
@@ -211,5 +215,15 @@ class PostController extends \Controller{
 	}
 	public function tag(){
 		return '标签页';
+	}
+	public function showTree($data,$prefix = ''){
+		$res = '';
+		foreach ($data as $k => $v) {
+			$res .= "<option value='".$v['id']."'>".$prefix.$v['title']."</option>'";
+			if (count($v['children']) > 0) {
+				$this->showTree($v['children'], $prefix.'--');
+			}
+		}
+		return $res;
 	}
 }

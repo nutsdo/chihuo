@@ -39,6 +39,7 @@ Route::get('admin/login',array(
 		'as' => 'admin.login',
 		'uses' => '\admin\SessionController@login'
 ));
+
 Route::post('admin/login',array(
 	'as' => 'admin.login',
 	'uses' => '\admin\SessionController@doLogin'
@@ -149,6 +150,10 @@ Route::group(array('prefix'=>'admin','before'=>'adminAuth'),function (){
 	Route::get('category/create',array(
 		'as' => 'category.create',
 		'uses' => '\admin\CategoryController@create'
+	));
+	Route::post('category/store',array(
+		'as' => 'category.store',
+		'uses' => '\admin\CategoryController@store'
 	));
 	
 });

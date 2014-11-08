@@ -13,5 +13,4 @@ class Post extends Eloquent {
 		return $this->belongsToMany('Tag', 'tag_item','post_id','tag_id');
 	}
 	
-
 }
