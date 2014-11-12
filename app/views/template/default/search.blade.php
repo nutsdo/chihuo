@@ -22,26 +22,26 @@
               <h3 class="masthead-brand">吃货小队</h3>
               <ul class="nav masthead-nav">
                 <li class="active"><a href="#">首页</a></li>
+                <li><a href="#">哈哈</a></li>
+                <li><a href="#">呵呵</a></li>
               </ul>
             </div>
           </div>
-		  <div class="row">
-			  <div class="col-lg-12">
-				  {{ Form::open(array(
-					   'route' => 'search_show',
-					   'id' => 'search',
-					   'class' => 'form-inline', 
-					   'role' => 'form',
-				  ))}}
-			    <div class="input-group">
-			      {{Form::text('keywords','',array('class'=>"form-control",'size'=>'100','placeholder'=>"请输入关键字"))}}
-			      <span class="input-group-btn">
-			        {{Form::submit('搜索',array('class'=>'btn btn-default'))}} 
-			      </span>
-			    </div>
-			    {{Form::close()}}
-			  </div>
-		  </div>
+
+          <div class="inner cover">
+			{{ Form::open(array(
+				   'route' => 'search_show',
+				   'id' => 'search',
+				   'class' => 'form-inline', 
+				   'role' => 'form',
+			))}}
+			<div class="form-group" style="width:80%;">
+				<label class="sr-only" for="exampleInputEmail2">关键字</label>
+				{{Form::text('keywords','',array('class'=>"form-control",'style'=>"width:100%",'placeholder'=>"请输入关键字"))}}			
+			</div>
+			{{Form::submit('搜索',array('class'=>'btn btn-default'))}} 
+			{{Form::close()}}
+          </div>
 
           <div class="mastfoot">
             <div class="inner">

@@ -12,7 +12,5 @@ class Post extends Eloquent {
 	public function tag(){
 		return $this->belongsToMany('Tag', 'tag_item','post_id','tag_id');
 	}
-	public  function categories(){
-		return $this->morphMany('Teepluss\Categorize\CategoryRelates\Relate', 'contentable');
-	}
+	
 }

@@ -8,7 +8,7 @@ h1,h3{font-weight:normal;}
 .clear{	clear:both;	height:0;overflow:hidden;display:block;}
 .left{ float:left;}
 .right{ float:right;}
-.center{width:430px;margin:0 auto;position:relative;}.mtop40{height:40px;}
+.center{width:1010px;margin:0 auto;position:relative;}.mtop40{height:40px;}
 .mtop20{height:20px;}
 .mtop30{height:30px;}
 .cen .left{width:670px;float:left;margin-right:20px;}
@@ -96,5 +96,3 @@ h1,h3{font-weight:normal;}
 .mtop40 .second{color:#666}
 .fixxd{position:fixed;top:0px;width:320px;height:532px;overflow:hidden;}
 .wx{margin-bottom:20px;}
-
-
