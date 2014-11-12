@@ -1,4 +1,3 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:wb="http://open.weibo.com/wb">
 <head>
@@ -16,47 +15,30 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">吃货小队</a>
+      <a class="navbar-brand" href="http://www.chihuo1408.com">吃货小队</a>
     </div>
 
       <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" style="width:500px;" placeholder="Search">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search">
+          <span class="input-group-btn">
+			  {{Form::submit('搜索',array('class'=>'btn btn-default'))}} 
+		  </span>
         </div>
-        <button type="submit" class="btn btn-default">搜索</button>
       </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">首页</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">菜单 <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-
-          </ul>
-        </li>
-      </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<div id="content" class="bs-docs-header">
-      <div class="container">
-        <p>吃货小队为您提供最精致的搜索结果</p>        
-      </div>
-</div>
+
 <div class="container">
 @foreach($res as $r)
   <div class="bs-callout bs-callout-info">
-    <a href="{{asset('post/'.$r->id)}}"><h4>{{$r->title}}</h4></a>
-    <p>{{summary($r->content,200)}}</p>
+    <a href="{{asset('post/'.$r->id)}}"><h4>{{preg_replace($ks,$kws,$r->title)}}</h4></a>
+    <p>{{preg_replace($ks,$kws,summary($r->content,200))}}</p>
   </div>
 @endforeach
 </div>
-<div class="footer navbar-static-bottom">
+<div class="footer navbar-fixed-bottom">
 	<div class="center">
 	工信部备案： 冀ICP备13015451号-1 ©2014 吃货小队 版权所有 <a href="" target="_blank">网站统计</a>
 	</div>
