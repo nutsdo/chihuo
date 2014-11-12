@@ -34,8 +34,15 @@ class SearchController extends BaseController {
 				$where .= ' OR title LIKE "%'.$kw.'%" OR content LIKE "%'.$kw.'%"';
 			}		
 		}
+		for($n=0;$n<count($keywords);$n++){
+			$k[$n] = '/'.$keywords[$n].'/';
+			$kws[$n] = "<b style='color:red'>".$keywords[$n]."</b>";
+		}
+
 		$res = Post::whereRaw($where)->paginate(10);
-		return View::make('template.default.search_show')->withRes($res);
+		return View::make('template.default.search_show')->withRes($res)
+														 ->withK($k)
+														 ->withKws($kws);
 	}
 	
 }
