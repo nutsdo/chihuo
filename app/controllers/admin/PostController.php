@@ -9,7 +9,7 @@ use Response;
 use User;
 use Post;
 use Redirect;
-use Auth;
+use Sentry;
 use Tag;
 use Category;
 use Categorize;
@@ -76,7 +76,7 @@ class PostController extends \Controller{
 			$post->cover = $cover;
  			$post->content = $content;
  			$post->views = rand(800,1200);
- 			$post->user_id = Auth::id();
+ 			$post->user_id = Sentry::getUser()->id;;
  			$post->save();
 			if ($post->id) {
 				foreach ($tag as $v){
@@ -186,7 +186,7 @@ class PostController extends \Controller{
 			$post->cover = $cover;
 			$post->content = $content;
 			$post->views = rand(800,1200);
-			$post->user_id = Auth::id();
+			$post->user_id = Sentry::getUser()->id;
 			$post->save();
 			if ($post->id) {
 				DB::table('tag_item')->where('post_id', '=', $post_id)->delete();	

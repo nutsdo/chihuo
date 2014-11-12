@@ -22,8 +22,6 @@
               <h3 class="masthead-brand">吃货小队</h3>
               <ul class="nav masthead-nav">
                 <li class="active"><a href="#">首页</a></li>
-                <li><a href="#">哈哈</a></li>
-                <li><a href="#">呵呵</a></li>
               </ul>
             </div>
           </div>
