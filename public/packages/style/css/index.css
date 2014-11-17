@@ -108,6 +108,7 @@ h1,h3{font-weight:normal;}
 		height:auto;
 	}
 	.new_pic{
-		display:none;
+		display:block;
+		width:100%;
 	}
 }

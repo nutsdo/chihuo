@@ -17,10 +17,15 @@
     <div class="navbar-header">
       <a class="navbar-brand" href="http://www.chihuo1408.com">吃货小队</a>
     </div>
-
+	  {{ Form::open(array(
+		   'route' => 'search_show',
+		   'id' => 'search',
+		   'class' => 'navbar-form navbar-left',
+		   'role' => 'form',
+	  ))}}
       <form class="navbar-form navbar-left" role="search">
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search">
+        {{Form::text('keywords','',array('class'=>"form-control",'placeholder'=>"请输入关键字"))}}
           <span class="input-group-btn">
 			  {{Form::submit('搜索',array('class'=>'btn btn-default'))}} 
 		  </span>
