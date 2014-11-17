@@ -96,3 +96,15 @@ h1,h3{font-weight:normal;}
 .mtop40 .second{color:#666}
 .fixxd{position:fixed;top:0px;width:320px;height:532px;overflow:hidden;}
 .wx{margin-bottom:20px;}
+@media (max-width: 800px){
+	.center{
+		width:670px;
+	}
+	.cen .right{
+		display:none;
+	}
+	.cen_logo img{
+		width:100%;
+		height:auto;
+	}
+}

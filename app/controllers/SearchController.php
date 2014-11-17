@@ -8,7 +8,7 @@ class SearchController extends BaseController {
 	}
 	
 	public function show(){
-		$keywords = Input::get('keywords');
+		$keywords = trim(Input::get('keywords'));
 		if ($keywords=='') {
 			Redirect::to('search.index');
 		}
