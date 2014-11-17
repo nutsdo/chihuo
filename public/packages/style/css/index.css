@@ -107,7 +107,7 @@ h1,h3{font-weight:normal;}
 		width:100%;
 		height:auto;
 	}
-	.new_pic img{
+	.new_pic{
 		display:none;
 	}
 }
