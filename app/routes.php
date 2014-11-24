@@ -23,6 +23,7 @@ Route::post('search/show',array(
 	'as' => 'search_show',
 	'uses' => 'SearchController@show'
 ));
+Route::get('special','SpecialController@Index');
 
 Route::get('admin',array(
 	'before' => 'adminAuth',
