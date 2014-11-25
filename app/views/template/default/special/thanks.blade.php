@@ -54,7 +54,7 @@ var remarkDomain = "http://remark.vmall.com";
                 	<div class="pro-area" id="promotion-prd-1349">
                         <p class="p-img">{{HTML::image('packages/style/special/images/dati.jpg','小蹄大做',array('width'=>'142','height'=>'142'))}}</p>
                         <p class="p-name">小蹄大做</p>
-                        <p class="p-slogan"><span style="color:#C8121B">感恩节活动：11.27-30日，凭此页面到店即可免费吃一份香川烤蹄。此外，分享此页面可免费吃烤鸡翅！</span></p>
+                        <p class="p-slogan">感恩节活动：11.27-30日，凭此页面到店即可免费吃一份香川烤蹄。此外，分享此页面可免费吃烤鸡翅！</p>
                         <p class="p-price"><b>免费吃&nbsp;香川烤蹄</b></p>
                     </div>
                     </a>
@@ -64,7 +64,7 @@ var remarkDomain = "http://remark.vmall.com";
                 	<div class="pro-area" id="promotion-prd-1404">
                         <p class="p-img">{{HTML::image('packages/style/special/images/dianya.jpg','典雅漫咖',array('width'=>'142','height'=>'142'))}}</p>
                         <p class="p-name">典雅漫咖</p>
-                        <p class="p-slogan"><span style="color:#C8121B">感恩节活动：11.27-30日，凭此页面到店即可免费吃一份披萨、一杯果饮。此外，分享此页面可免费吃小吃或喝花茶！</span></p>
+                        <p class="p-slogan">感恩节活动：11.27-30日，凭此页面到店即可免费吃一份披萨、一杯果饮。此外，分享此页面可免费吃小吃或喝花茶！</p>
                         <p class="p-price"><b>免费吃&nbsp;披萨、果饮</b></p>
                     </div>
                     </a>
@@ -74,7 +74,7 @@ var remarkDomain = "http://remark.vmall.com";
                 	<div class="pro-area" id="promotion-prd-1403">
                         <p class="p-img">{{HTML::image('packages/style/special/images/jingwei.jpg','随园京味楼',array('width'=>'142','height'=>'142'))}}</p>
                         <p class="p-name">随园京味楼</p>
-                        <p class="p-slogan"><span style="color:#C8121B">感恩节活动：11.27-12.31日，凭此页面到店即可免费吃一份艾窝窝。此外，分享此页面可免费吃驴打滚！</span></p>
+                        <p class="p-slogan">感恩节活动：11.27-12.31日，凭此页面到店即可免费吃一份艾窝窝。此外，分享此页面可免费吃驴打滚！</p>
                         <p class="p-price"><b>免费吃&nbsp;艾窝窝</b></p>
                     </div>
                     </a>
@@ -84,7 +84,7 @@ var remarkDomain = "http://remark.vmall.com";
                 	<div class="pro-area" id="promotion-prd-1221">
                         <p class="p-img">{{HTML::image('packages/style/special/images/maotai.jpg','茅台古镇',array('width'=>'142','height'=>'142'))}}</p>
                         <p class="p-name">茅台古镇</p>
-                        <p class="p-slogan"><span style="color:#C8121B">感恩节活动：11.27-12.31日，凭此页面到店即可免费吃一份红糖糍粑。此外，分享此页面可免费喝苗家土酒！</span></p>
+                        <p class="p-slogan">感恩节活动：11.27-12.31日，凭此页面到店即可免费吃一份红糖糍粑。此外，分享此页面可免费喝苗家土酒！</p>
                         <p class="p-price"><b>免费吃&nbsp;红糖糍粑</b></p>
                     </div>
                     </a>
@@ -94,7 +94,7 @@ var remarkDomain = "http://remark.vmall.com";
                 	<div class="pro-area" id="promotion-prd-1362">
                         <p class="p-img">{{HTML::image('packages/style/special/images/fenglin.jpg','枫林晚',array('width'=>'142','height'=>'142'))}}</p>
                         <p class="p-name">枫林晚</p>
-                        <p class="p-slogan"><span style="color:#C8121B">感恩节活动：11.27-30日，凭此页面到店即可免费饮一杯花茶。此外，分享此页面可免费吃花生和瓜子！</span></p>
+                        <p class="p-slogan">感恩节活动：11.27-30日，凭此页面到店即可免费饮一杯花茶。此外，分享此页面可免费吃花生和瓜子！</p>
                         <p class="p-price"><b>免费饮&nbsp;一杯花茶</b></p>
                     </div>
                     </a>
@@ -104,7 +104,7 @@ var remarkDomain = "http://remark.vmall.com";
                 	<div class="pro-area" id="promotion-prd-1462">
                         <p class="p-img">{{HTML::image('packages/style/special/images/longxia.jpg','韩氏小龙虾麻辣配送',array('width'=>'142','height'=>'142'))}}</p>
                         <p class="p-name">韩氏小龙虾麻辣配送</p>
-                        <p class="p-slogan"><span style="color:#C8121B">感恩节活动：11.27-30日，韩氏小龙虾将赠送小龙虾和麻辣鱿鱼，共50份。吃货们发送姓名及电话号码给吃货小队即可！先到先得，快来抢吧！此外，领取时分享此页面可免费领美味蛋糕！</span></p>
+                        <p class="p-slogan">感恩节活动：11.27-30日，韩氏小龙虾将赠送小龙虾和麻辣鱿鱼，共50份。吃货们发送姓名及电话号码给吃货小队即可！先到先得，快来抢吧！此外，领取时分享此页面可免费领美味蛋糕！</p>
                         <p class="p-price"><b>免费吃&nbsp;小龙虾和麻辣鱿鱼</b></p>
                     </div>
                     </a>
@@ -114,7 +114,7 @@ var remarkDomain = "http://remark.vmall.com";
                 	<div class="pro-area" id="promotion-prd-1070">
                         <p class="p-img">{{HTML::image('packages/style/special/images/mian.jpg','吃面吧',array('width'=>'142','height'=>'142'))}}</p>
                         <p class="p-name">吃面吧</p>
-                        <p class="p-slogan"><span style="color:#C8121B">感恩节活动：11.27-30日，凭此页面到店即可免费吃一碗重庆小面（每天10份）。此外，分享此页面可免费吃卤蛋、火腿或烧饼！</span></p>
+                        <p class="p-slogan">感恩节活动：11.27-30日，凭此页面到店即可免费吃一碗重庆小面（每天10份）。此外，分享此页面可免费吃卤蛋、火腿或烧饼！</p>
                         <p class="p-price"><b>免费吃&nbsp;重庆小面</b></p>
                     </div>
                     </a>
@@ -124,7 +124,7 @@ var remarkDomain = "http://remark.vmall.com";
                 	<div class="pro-area" id="promotion-prd-1185">
                         <p class="p-img">{{HTML::image('packages/style/special/images/xinyi.jpg','心意小面',array('width'=>'142','height'=>'142'))}}</p>
                         <p class="p-name">心意小面</p>
-                        <p class="p-slogan"><span style="color:#C8121B">感恩节活动：11.27-11.30日，凭此页面到店即可免费喝一杯鲜榨花生浆。</span></p>
+                        <p class="p-slogan">感恩节活动：11.27-11.30日，凭此页面到店即可免费喝一杯鲜榨花生浆。</p>
                         <p class="p-price"><b>免费喝&nbsp;鲜榨花生浆</b></p>
                     </div>
                     </a>
@@ -134,7 +134,7 @@ var remarkDomain = "http://remark.vmall.com";
                 	<div class="pro-area" id="promotion-prd-1196">
                         <p class="p-img">{{HTML::image('packages/style/special/images/haojiu.jpg','好久不见烤串',array('width'=>'142','height'=>'142'))}}</p>
                         <p class="p-name">好久不见烤串</p>
-                        <p class="p-slogan"><span style="color:#C8121B">感恩节活动：11.27-11.30日，凭此页面到店即享八折优惠。此外，分享此页面可免费吃烤翅和肉筋！</span></p>
+                        <p class="p-slogan">感恩节活动：11.27-11.30日，凭此页面到店即享八折优惠。此外，分享此页面可免费吃烤翅和肉筋！</p>
                         <p class="p-price"><b>全场8折</b></p>
                     </div>
                     </a>
@@ -144,7 +144,7 @@ var remarkDomain = "http://remark.vmall.com";
                 	<div class="pro-area" id="promotion-prd-729">
                         <p class="p-img">{{HTML::image('packages/style/special/images/yugang.jpg','光明渔港',array('width'=>'142','height'=>'142'))}}</p>
                         <p class="p-name">光明渔港（四店联合）</p>
-                        <p class="p-slogan"><span style="color:#C8121B">感恩节活动：11.27-12.27日，凭此页面到店即享半价剁椒鱼头。此外，分享此页面可免费吃泡椒肚丝！</span></p>
+                        <p class="p-slogan">感恩节活动：11.27-12.27日，凭此页面到店即享半价剁椒鱼头。此外，分享此页面可免费吃泡椒肚丝！</p>
                         <p class="p-price"><b>享&nbsp;半价剁椒鱼头</b></p>
                     </div>
                     </a>
@@ -154,7 +154,7 @@ var remarkDomain = "http://remark.vmall.com";
                 	<div class="pro-area" id="promotion-prd-1350">
                         <p class="p-img">{{HTML::image('packages/style/special/images/haokelai.jpg','豪客来西餐厅',array('width'=>'142','height'=>'142'))}}</p>
                         <p class="p-name">豪客来西餐厅</p>
-                        <p class="p-slogan"><span style="color:#C8121B">感恩节活动：11.27-30日，凭此页面到店即可享半价美食，豪客来每天提供3种半价美食哦！此外，分享此页面可免费拿存钱罐！</span></p>
+                        <p class="p-slogan">感恩节活动：11.27-30日，凭此页面到店即可享半价美食，豪客来每天提供3种半价美食哦！此外，分享此页面可免费拿存钱罐！</p>
                         <p class="p-price"><b>享&nbsp;半价美食</b></p>
                     </div>
                     </a>
