@@ -60,12 +60,12 @@ var remarkDomain = "http://remark.vmall.com";
                     </a>
                 </li>
                 <li>
-                    <a href="http://mp.weixin.qq.com/s?__biz=MzA4OTk3MzIxOQ==&mid=201877744&idx=2&sn=6d6247684637264253805fe3766df9a2#rd">
-                	<div class="pro-area" id="promotion-prd-1404">
-                        <p class="p-img">{{HTML::image('packages/style/special/images/dianya.jpg','典雅漫咖',array('width'=>'142','height'=>'142'))}}</p>
-                        <p class="p-name">典雅漫咖</p>
-                        <p class="p-slogan">感恩节活动：11.27-30日，凭此页面到店即可免费吃一份披萨、一杯果饮。此外，分享此页面可免费吃小吃或喝花茶！</p>
-                        <p class="p-price"><b>免费吃&nbsp;披萨、果饮</b></p>
+                    <a href="http://mp.weixin.qq.com/s?__biz=MzA4OTk3MzIxOQ==&mid=201878176&idx=3&sn=dfa42a8f2b66d7c1219fed47953dcec8#rd">
+                	<div class="pro-area" id="promotion-prd-729">
+                        <p class="p-img">{{HTML::image('packages/style/special/images/yugang.jpg','光明渔港',array('width'=>'142','height'=>'142'))}}</p>
+                        <p class="p-name">光明渔港（四店联合）</p>
+                        <p class="p-slogan">感恩节活动：11.27-12.27日，凭此页面到店即享半价剁椒鱼头。此外，分享此页面可免费吃泡椒肚丝！</p>
+                        <p class="p-price"><b>享&nbsp;半价剁椒鱼头</b></p>
                     </div>
                     </a>
                 </li>
@@ -90,15 +90,16 @@ var remarkDomain = "http://remark.vmall.com";
                     </a>
                 </li>
                 <li>
-                    <a href="http://mp.weixin.qq.com/s?__biz=MzA4OTk3MzIxOQ==&mid=201877744&idx=5&sn=7dfc2cbc182c4c789e404163691213a9#rd">
-                	<div class="pro-area" id="promotion-prd-1362">
-                        <p class="p-img">{{HTML::image('packages/style/special/images/fenglin.jpg','枫林晚',array('width'=>'142','height'=>'142'))}}</p>
-                        <p class="p-name">枫林晚</p>
-                        <p class="p-slogan">感恩节活动：11.27-30日，凭此页面到店即可免费饮一杯花茶。此外，分享此页面可免费吃花生和瓜子！</p>
-                        <p class="p-price"><b>免费饮&nbsp;一杯花茶</b></p>
+                    <a href="http://mp.weixin.qq.com/s?__biz=MzA4OTk3MzIxOQ==&mid=201877744&idx=2&sn=6d6247684637264253805fe3766df9a2#rd">
+                	<div class="pro-area" id="promotion-prd-1404">
+                        <p class="p-img">{{HTML::image('packages/style/special/images/dianya.jpg','典雅漫咖',array('width'=>'142','height'=>'142'))}}</p>
+                        <p class="p-name">典雅漫咖</p>
+                        <p class="p-slogan">感恩节活动：11.27-30日，凭此页面到店即可免费吃一份披萨、一杯果饮。此外，分享此页面可免费吃小吃或喝花茶！</p>
+                        <p class="p-price"><b>免费吃&nbsp;披萨、果饮</b></p>
                     </div>
                     </a>
                 </li>
+                
                 <li>
                     <a href="http://mp.weixin.qq.com/s?__biz=MzA4OTk3MzIxOQ==&mid=201877744&idx=6&sn=158f605c827c191fc72de385ba1218c9#rd">
                 	<div class="pro-area" id="promotion-prd-1462">
@@ -130,22 +131,22 @@ var remarkDomain = "http://remark.vmall.com";
                     </a>
                 </li>
                 <li>
+                <a href="http://mp.weixin.qq.com/s?__biz=MzA4OTk3MzIxOQ==&mid=201877744&idx=5&sn=7dfc2cbc182c4c789e404163691213a9#rd">
+                	<div class="pro-area" id="promotion-prd-1362">
+                        <p class="p-img">{{HTML::image('packages/style/special/images/fenglin.jpg','枫林晚',array('width'=>'142','height'=>'142'))}}</p>
+                        <p class="p-name">枫林晚</p>
+                        <p class="p-slogan">感恩节活动：11.27-30日，凭此页面到店即可免费饮一杯花茶。此外，分享此页面可免费吃花生和瓜子！</p>
+                        <p class="p-price"><b>免费饮&nbsp;一杯花茶</b></p>
+                    </div>
+                    </a>
+                </li>
+                <li>
                     <a href="http://mp.weixin.qq.com/s?__biz=MzA4OTk3MzIxOQ==&mid=201878176&idx=4&sn=586c217433f2322733bea6a36e4025ea#rd">
                 	<div class="pro-area" id="promotion-prd-1196">
                         <p class="p-img">{{HTML::image('packages/style/special/images/haojiu.jpg','好久不见烤串',array('width'=>'142','height'=>'142'))}}</p>
                         <p class="p-name">好久不见烤串</p>
                         <p class="p-slogan">感恩节活动：11.27-11.30日，凭此页面到店即享八折优惠。此外，分享此页面可免费吃烤翅和肉筋！</p>
                         <p class="p-price"><b>全场8折</b></p>
-                    </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://mp.weixin.qq.com/s?__biz=MzA4OTk3MzIxOQ==&mid=201878176&idx=3&sn=dfa42a8f2b66d7c1219fed47953dcec8#rd">
-                	<div class="pro-area" id="promotion-prd-729">
-                        <p class="p-img">{{HTML::image('packages/style/special/images/yugang.jpg','光明渔港',array('width'=>'142','height'=>'142'))}}</p>
-                        <p class="p-name">光明渔港（四店联合）</p>
-                        <p class="p-slogan">感恩节活动：11.27-12.27日，凭此页面到店即享半价剁椒鱼头。此外，分享此页面可免费吃泡椒肚丝！</p>
-                        <p class="p-price"><b>享&nbsp;半价剁椒鱼头</b></p>
                     </div>
                     </a>
                 </li>
@@ -159,7 +160,6 @@ var remarkDomain = "http://remark.vmall.com";
                     </div>
                     </a>
                 </li>
-               
          </ul>
     </section>
 </article> <!-- 21030306-推荐商品-end -->
