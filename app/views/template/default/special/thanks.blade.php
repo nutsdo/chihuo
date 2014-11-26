@@ -3,9 +3,9 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>感恩节小队回馈吃货了，免费去吃吧！</title>
-<meta name="keywords" content="石家庄，石家庄吃货，石家庄吃货小队">
-<meta name="description" content="感恩节小队回馈吃货了，免费去吃吧！"> 
+<title>感恩节免费吃遍石家庄 就是这么任性</title>
+<meta name="keywords" content="感恩节免费吃遍石家庄 就是这么任性">
+<meta name="description" content="感恩节免费吃遍石家庄 就是这么任性"> 
 {{HTML::style('packages/style/special/css/main.css')}} 
 {{HTML::style('packages/style/special/css/vmcss.css')}} 
 <script>
@@ -30,9 +30,9 @@ var remarkDomain = "http://remark.vmall.com";
     <section class="slider">
         <div style="overflow: hidden; visibility: visible;" id="slider">
             <ul style="list-style: none outside none; margin: 0px; width: 9515px; transition-duration: 300ms; transform: translate3d(-3806px, 0px, 0px);">                
-                <li><a href="http://www.chihuo1408.com" target="_blank">{{HTML::image('packages/style/special/images/thanksgiving.jpg')}}</a></li>
-                <li><a href="http://www.chihuo1408.com" target="_blank">{{HTML::image('packages/style/special/images/thanksgiving.jpg')}}</a></li>
-                <li><a href="http://www.chihuo1408.com" target="_blank">{{HTML::image('packages/style/special/images/thanksgiving.jpg')}}</a></li>
+                <li>{{HTML::image('packages/style/special/images/thanksgiving.jpg')}}</li>
+                <li>{{HTML::image('packages/style/special/images/thanksgiving.jpg')}}</li>
+                <li>{{HTML::image('packages/style/special/images/thanksgiving.jpg')}}</li>
             </ul>
         </div>
         <nav class="slider-btn" id="sliderNav">
@@ -169,8 +169,8 @@ var remarkDomain = "http://remark.vmall.com";
 <section id="bottom-area" class="bottom-area">
 
   <p class="touch"> 
-  	<a href="##" class="current"> 触屏版</a>
-  	<a href="javascript:;" onclick='location.href="http://www.chihuo1408.com/"'> 电脑版</a>
+  	<a href="http://weibo.com/chihuo1408" class="current">{{HTML::image('packages/style/special/images/weibo.jpg')}}</a>
+  	<a href="javascript:;" onclick='location.href="http://weixin.sogou.com/gzh?openid=oIWsFt1Serxbdpef25B3Gl4GOOJs"'>{{HTML::image('packages/style/special/images/weixin.jpg')}}</a>
   </p>
   
   <p class="copyright"><span>Copyright © 2013-2014</span></p>
