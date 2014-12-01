@@ -36,6 +36,10 @@ Route::get('post/{id}',array(
 	'uses' => 'PostController@show'
 ));
 
+/*微信接口*/
+Route::get('weixin','TestController@Index');
+Route::get('weixin/valid','TestController@valid');
+
 Route::get('admin/login',array(
 		'as' => 'admin.login',
 		'uses' => '\admin\SessionController@login'
