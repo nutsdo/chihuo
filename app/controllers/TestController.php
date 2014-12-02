@@ -12,7 +12,7 @@ use Api\weixin\Weixin;
 class TestController extends BaseController{
 	
 	public function Index(){
-		$wechatObj = new Weixin('chihuo',true);
+		$wechatObj = new Weixin();
 		$wechatObj->responseMsg();
 	}
 }
