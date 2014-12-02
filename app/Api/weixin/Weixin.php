@@ -23,7 +23,7 @@ class Weixin {
 			$this->msg = (array)simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
 			$this->msgtype = strtolower($this->msg['MsgType']);
 		}
-	}　　　　 
+	}
 	//回复文本消息
 	public function makeText($text='')
 	{
@@ -38,7 +38,7 @@ class Weixin {
 					<FuncFlag>%s</FuncFlag>
 					</xml>";
 		return sprintf($textTpl,$text,$FuncFlag);
-	}　　　　 
+	}
 	//根据数组参数回复图文消息
 	public function makeNews($newsData=array())
 	{
