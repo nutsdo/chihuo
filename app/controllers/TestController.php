@@ -10,15 +10,10 @@
  */ 
 use Api\weixin\Weixin;
 class TestController extends BaseController{
-	public function __construct()
-	{
-		define("TOKEN", "test");
-	}
+	
 	public function Index(){
-		
-	}
-	public function valid(){
-		$wechatObj = new Weixin();
-		$wechatObj->valid($_GET['echostr']);
+		$wechatObj = new Weixin('chihuo',true);
+		//微信接口验证
+		$wechatObj->valid();		
 	}
 }
