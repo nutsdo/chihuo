@@ -8,7 +8,7 @@
  * @param 
  * @param 
  */ 
-use Api\Weixin\Weixin;
+use Api\weixin\Weixin;
 class TestController extends BaseController{
 	public function __construct()
 	{
@@ -20,10 +20,5 @@ class TestController extends BaseController{
 	public function valid(){
 		$wechatObj = new Weixin();
 		$wechatObj->valid($_GET['echostr']);
-		//valid signature , option
-		if($wechatObj->checkSignature()){
-			echo $echoStr;
-			exit;
-		}
 	}
 }

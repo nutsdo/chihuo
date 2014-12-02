@@ -19,7 +19,7 @@
 			"app/tests/TestCase.php"
 		],
 		"psr-4": {
-            "Api\\": "Api/weixin"
+            "Api\\": "app/Api"
         }
 	},
 	"scripts": {
