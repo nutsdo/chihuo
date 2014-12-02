@@ -15,7 +15,7 @@ class Weixin {
 	//获得用户发过来的消息（消息内容和消息类型  ）
 	public function getMsg()
 	{
-		$postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
+		$postStr = isset($GLOBALS["HTTP_RAW_POST_DATA"])?$GLOBALS["HTTP_RAW_POST_DATA"] : '';
 		if ($this->debug) {
 			$this->write_log($postStr);
 		}
@@ -123,7 +123,7 @@ class Weixin {
 		public function responseMsg()
 		{
 			//get post data, May be due to the different environments
-			$postStr = $GLOBALS["HTTP_RAW_POST_DATA"];
+			$postStr = isset($GLOBALS["HTTP_RAW_POST_DATA"])?$GLOBALS["HTTP_RAW_POST_DATA"] : '';
 		
 			//extract post data
 			if (!empty($postStr)){
