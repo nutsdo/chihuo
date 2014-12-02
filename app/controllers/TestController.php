@@ -9,7 +9,6 @@
  * @param 
  */ 
 use Api\weixin\Weixin;
-use Post;
 class TestController extends BaseController{
 	
 	public function Index(){
