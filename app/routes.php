@@ -37,8 +37,7 @@ Route::get('post/{id}',array(
 ));
 
 /*微信接口*/
-Route::get('weixin','TestController@Index');
-Route::get('weixin/valid','TestController@valid');
+Route::any('weixin','TestController@Index');
 
 Route::get('admin/login',array(
 		'as' => 'admin.login',
