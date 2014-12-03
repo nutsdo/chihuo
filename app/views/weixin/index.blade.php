@@ -17,7 +17,6 @@
 @if($type=='text')
 	<MsgType><![CDATA[text]]></MsgType>
 	<Content><![CDATA[{{ $content }}]]></Content>
-</xml>
 @elseif($type=="news")
 	<MsgType><![CDATA[news]]></MsgType>
 	<ArticleCount>{{ $count }}</ArticleCount>
@@ -31,5 +30,5 @@
 		</item>
 	@endforeach
 	</Articles>
-</xml>
 @endif
+</xml>
