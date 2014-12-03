@@ -25,17 +25,22 @@ class WechatController extends BaseController{
     	//查询数据库，匹配关键字
     	$keywords = $message->content;
     	$tags = Tag::where('name','=',$keywords)->first();
-    	$posts = Tag::find($tags->tag_id)->posts;
-    	$count = count($posts);
-    	if ( empty($tags)|| $count<1) {
+    	if(empty($tags)){
     		$content = '请输入精准的关键字^ ^';
     		return View::make('weixin.index')->with('message',$message)
-    										 ->with('content',$content);
-    	}else {
-    		$type = 'news';
-	    	return View::make('weixin.news')->with('posts', $posts)
-	    									 ->with('message',$message)
-	    									 ->with('count',$count);
+    		->with('content',$content);
+    	}else{
+    		$posts = Tag::find($tags->tag_id)->posts;
+    		if(!empty($posts)){
+    			$count = count($posts);
+    			return View::make('weixin.index')->with('posts', $posts)
+    			->with('message',$message)
+    			->with('count',$count);
+    		}else {
+    			$content = '请输入精准的关键字^ ^';
+    			return View::make('weixin.index')->with('message',$message)
+    			->with('content',$content);
+    		}
     	}
 	}
 }
