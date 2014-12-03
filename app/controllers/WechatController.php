@@ -27,8 +27,12 @@ class WechatController extends BaseController{
     	$tags = Tag::where('name','=',$keywords)->first();
     	$posts = Tag::find($tags->tag_id)->posts;
     	$count = count($posts);
-    	return View::make('weixin.index')->with('posts', $posts)
-    									 ->with('message',$message)
-    									 ->with('count',$count);
-	}	
+    	if ($count==0) {
+    		return '请输入精准的关键字';
+    	}else {
+	    	return View::make('weixin.index')->with('posts', $posts)
+	    									 ->with('message',$message)
+	    									 ->with('count',$count);
+    	}
+	}
 }
