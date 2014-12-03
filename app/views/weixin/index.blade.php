@@ -9,21 +9,18 @@
  * @param 
  */ 
 ?>
+
+<xml>
+	<ToUserName><![CDATA[{{ $message->FromUserName }}]]></ToUserName>
+	<FromUserName><![CDATA[{{ $message->ToUserName }}]]></FromUserName>
+	<CreateTime>{{ time() }}</CreateTime>
 <!-- 回复文本消息 -->
-<!-- 
-<xml>
-	<ToUserName><![CDATA[{{ $message->FromUserName }}]]></ToUserName>
-	<FromUserName><![CDATA[{{ $message->ToUserName }}]]></FromUserName>
-	<CreateTime>{{ time() }}</CreateTime>
+@if($type=='text')
 	<MsgType><![CDATA[text]]></MsgType>
-	<Content><![CDATA[{{ $message->Content }}]]></Content>
+	<Content><![CDATA[{{ $content }}]]></Content>
 </xml>
- -->
+@elseif($type=="news")
 <!-- 回复图文消息 -->
-<xml>
-	<ToUserName><![CDATA[{{ $message->FromUserName }}]]></ToUserName>
-	<FromUserName><![CDATA[{{ $message->ToUserName }}]]></FromUserName>
-	<CreateTime>{{ time() }}</CreateTime>
 	<MsgType><![CDATA[news]]></MsgType>
 	<ArticleCount>{{ $count }}</ArticleCount>
 	<Articles>
@@ -36,4 +33,5 @@
 		</item>
 	@endforeach
 	</Articles>
-</xml> 
+</xml>
+@endif 
