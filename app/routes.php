@@ -31,9 +31,13 @@ Route::get('admin',array(
 	'uses' => '\admin\AdminController@getIndex'
 ));
 
-Route::get('post/{id}',array(
+Route::get('post/show/{id}',array(
 	'as' => 'post_show',
 	'uses' => 'PostController@show'
+));
+Route::get('post/showtag',array(
+	'as' => 'showtag',
+	'uses' => 'PostController@showtag'
 ));
 
 /*微信接口*/

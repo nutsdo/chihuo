@@ -22,5 +22,14 @@ class PostController extends BaseController{
 												->withPre($pre)
 												->withNext($next);
 	}
+	
+	public function showtag(){
+
+		$tags = Tag::where('name','=','石家庄')->first();
+		$post = Tag::find($tags->tag_id)->posts;
+		foreach ($post as $p){
+			var_dump($p);
+		}
+	}
 
 }
