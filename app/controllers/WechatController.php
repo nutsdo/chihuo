@@ -26,20 +26,26 @@ class WechatController extends BaseController{
     	$keywords = $message->content;
     	$tags = Tag::where('name','=',$keywords)->first();
     	if(empty($tags)){
+    		$type=='text';
     		$content = '请输入精准的关键字^ ^';
     		return View::make('weixin.index')->with('message',$message)
-    		->with('content',$content);
+    										 ->with('content',$content)
+    											->with('type',$type);
     	}else{
     		$posts = Tag::find($tags->tag_id)->posts;
     		if(!empty($posts)){
+    			$type=="news";
     			$count = count($posts);
     			return View::make('weixin.index')->with('posts', $posts)
-    			->with('message',$message)
-    			->with('count',$count);
+									    			->with('message',$message)
+									    			->with('count',$count)
+    												->with('type',$type);
     		}else {
+    			$type=='text';
     			$content = '请输入精准的关键字^ ^';
     			return View::make('weixin.index')->with('message',$message)
-    			->with('content',$content);
+    												->with('content',$content)
+    												->with('type',$type);
     		}
     	}
 	}
