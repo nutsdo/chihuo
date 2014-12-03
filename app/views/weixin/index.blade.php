@@ -14,13 +14,11 @@
 	<ToUserName><![CDATA[{{ $message->FromUserName }}]]></ToUserName>
 	<FromUserName><![CDATA[{{ $message->ToUserName }}]]></FromUserName>
 	<CreateTime>{{ time() }}</CreateTime>
-<!-- 回复文本消息 -->
 @if($type=='text')
 	<MsgType><![CDATA[text]]></MsgType>
 	<Content><![CDATA[{{ $content }}]]></Content>
 </xml>
 @elseif($type=="news")
-<!-- 回复图文消息 -->
 	<MsgType><![CDATA[news]]></MsgType>
 	<ArticleCount>{{ $count }}</ArticleCount>
 	<Articles>
@@ -34,4 +32,4 @@
 	@endforeach
 	</Articles>
 </xml>
-@endif 
+@endif
