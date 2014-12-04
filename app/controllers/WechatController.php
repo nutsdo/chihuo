@@ -8,7 +8,7 @@
  * @param 
  * @param 
  */ 
-use Api\weixin\Weixin;
+
 class WechatController extends BaseController{
 	public function __construct()
 	{
@@ -22,9 +22,12 @@ class WechatController extends BaseController{
 		$message = file_get_contents('php://input');
     	$message = simplexml_load_string($message, 'SimpleXMLElement', LIBXML_NOCDATA);
     	
+    	$type='text';
+    	$content='欢迎关注吃货小队';
+    	
     	//查询数据库，匹配关键字
-    	$keywords = $message->Content;
-    	$tags = Tag::where('name','=',$keywords)->first();
+    	$keyword = $message->Content;
+    	$tags = Tag::where('name','=',$keyword)->first();
     	if(empty($tags)){
     		$type=='text';
     		$content = '请输入精准的关键字^ ^';
