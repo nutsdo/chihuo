@@ -39,7 +39,7 @@ class WechatController extends BaseController{
     		if(!empty($posts)){
     			$type=="news";
     			$count = count($posts);
-    			return View::make('weixin.index')->with('posts', $posts)
+    			return View::make('weixin.news')->with('posts', $posts)
 									    			->with('message',$message)
 									    			->with('count',$count)
     												->with('type',$type);
