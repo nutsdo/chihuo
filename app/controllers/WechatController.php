@@ -23,14 +23,14 @@ class WechatController extends BaseController{
     	$message = simplexml_load_string($message, 'SimpleXMLElement', LIBXML_NOCDATA);
     	
     	//查询数据库，匹配关键字
-    	$keywords = $message->content;
+    	$keywords = $message->Content;
     	$tags = Tag::where('name','=',$keywords)->first();
     	if(empty($tags)){
     		$type=='text';
     		$content = '请输入精准的关键字^ ^';
     		return View::make('weixin.index')->with('message',$message)
     										 ->with('content',$content)
-    											->with('type',$type);
+    										 ->with('type',$type);
     	}else{
     		$posts = Tag::find($tags->tag_id)->posts;
     		if(!empty($posts)){

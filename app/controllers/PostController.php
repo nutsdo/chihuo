@@ -25,23 +25,19 @@ class PostController extends BaseController{
 	
 	public function showtag(){
 
-		$keywords = 'fads';
+		$keywords = '石家庄';
     	$tags = Tag::where('name','=',$keywords)->first();   	
     	if(empty($tags)){
     		$content = '请输入精准的关键字^ ^';
-    		return View::make('weixin.index')->with('message',$message)
-    											 ->with('content',$content);
+    		return $content;
     	}else{
     		$posts = Tag::find($tags->tag_id)->posts;
     		if(!empty($posts)){
     			$count = count($posts);
-    			return View::make('weixin.index')->with('posts', $posts)
-	    									 ->with('message',$message)
-	    									 ->with('count',$count);
+    			return $keywords;
     		}else {
     			$content = '请输入精准的关键字^ ^';
-    			return View::make('weixin.index')->with('message',$message)
-    											 ->with('content',$content);
+    			return $content;
     		}
     	}
 	}
