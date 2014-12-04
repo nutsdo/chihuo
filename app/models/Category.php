@@ -2,7 +2,7 @@
 
 class Category extends Eloquent {
 
-	protected $table = 'Categories';
+	protected $table = 'categories';
 
 	public  function categories(){
 		return $this->morphMany('Teepluss\Categorize\CategoryRelates\Relate', 'contentable');
