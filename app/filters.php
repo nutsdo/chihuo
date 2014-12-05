@@ -165,3 +165,10 @@ Route::filter('weixin', function()
 		return false;
 	}
 });
+
+Route::filter('check',function(){
+	
+});
+
+
+

@@ -39,6 +39,10 @@ Route::get('post/showtag',array(
 	'as' => 'showtag',
 	'uses' => 'PostController@showtag'
 ));
+Route::get('post/access-token',array(
+	'as' => 'access-token',
+	'uses' => 'PostController@getAccessToken'
+));
 
 /*微信接口*/
 Route::resource('weixin','WechatController');
