@@ -163,6 +163,8 @@ Route::filter('weixin', function()
 	// 用自己的 signature 去跟请求里的 signature 对比
 	if ($our_signature != $signature) {
 		return false;
+	}else{
+		return true;
 	}
 });
 
