@@ -13,7 +13,7 @@ class WechatController extends BaseController{
 	
 	public function __construct()
 	{
-		$this->beforeFilter('weixin', array('on' => 'get|post'));
+		//$this->beforeFilter('weixin', array('on' => 'get|post'));
 	}
 
 	public function index()
@@ -29,32 +29,33 @@ class WechatController extends BaseController{
     	$type='text';
     	$content='欢迎关注吃货小队';
     	
+    	return View::make('weixin.index')->with('message', $message);
     	//查询数据库，匹配关键字
-    	$keyword = $message->Content;
-    	$tags = Tag::where('name','=',$keyword)->first();
-    	if(empty($tags)){
-    		$type=='text';
-    		$content = '请输入精准的关键字^ ^';
-    		return View::make('weixin.index')->with('message',$message)
-    										 ->with('content',$content)
-    										 ->with('type',$type);
-    	}else{
-    		$posts = Tag::find($tags->tag_id)->posts;
-    		if(!empty($posts)){
-    			$type=="news";
-    			$count = count($posts);
-    			return View::make('weixin.news')->with('posts', $posts)
-									    			->with('message',$message)
-									    			->with('count',$count)
-    												->with('type',$type);
-    		}else {
-    			$type=='text';
-    			$content = '请输入精准的关键字^ ^';
-    			return View::make('weixin.index')->with('message',$message)
-    												->with('content',$content)
-    												->with('type',$type);
-    		}
-    	}
+//     	$keyword = $message->Content;
+//     	$tags = Tag::where('name','=',$keyword)->first();
+//     	if(empty($tags)){
+//     		$type=='text';
+//     		$content = '请输入精准的关键字^ ^';
+//     		return View::make('weixin.index')->with('message',$message)
+//     										 ->with('content',$content)
+//     										 ->with('type',$type);
+//     	}else{
+//     		$posts = Tag::find($tags->tag_id)->posts;
+//     		if(!empty($posts)){
+//     			$type=="news";
+//     			$count = count($posts);
+//     			return View::make('weixin.news')->with('posts', $posts)
+// 									    			->with('message',$message)
+// 									    			->with('count',$count)
+//     												->with('type',$type);
+//     		}else {
+//     			$type=='text';
+//     			$content = '请输入精准的关键字^ ^';
+//     			return View::make('weixin.index')->with('message',$message)
+//     												->with('content',$content)
+//     												->with('type',$type);
+//     		}
+//     	}
 	}
 	
 	//响应消息
