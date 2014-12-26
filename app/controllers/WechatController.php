@@ -22,14 +22,14 @@ class WechatController extends BaseController{
 	}
 	//自定义回复
 	public function store(){
-		//return $this->responseMsg();
-		$message = file_get_contents('php://input');
-    	$message = simplexml_load_string($message, 'SimpleXMLElement', LIBXML_NOCDATA);
+		return $this->responseMsg();
+// 		$message = file_get_contents('php://input');
+//     	$message = simplexml_load_string($message, 'SimpleXMLElement', LIBXML_NOCDATA);
     	
-    	$type='text';
-    	$content='欢迎关注吃货小队';
+//     	$type='text';
+//     	$content='欢迎关注吃货小队';
     	
-    	return View::make('weixin.index')->with('message', $message);
+    	
     	//查询数据库，匹配关键字
 //     	$keyword = $message->Content;
 //     	$tags = Tag::where('name','=',$keyword)->first();
@@ -63,43 +63,44 @@ class WechatController extends BaseController{
 		$postMsg = file_get_contents('php://input');
 		if (!empty($postMsg)) {
 			$message = simplexml_load_string($postMsg, 'SimpleXMLElement', LIBXML_NOCDATA);
-			$msgType = trim($message->MsgType);
+			return View::make('weixin.index')->with('message', $message);
+//			$msgType = trim($message->MsgType);
 			
-			switch ($msgType){
-				case "event":
-					$result = $this->receiveEvent($message);
-					break;
+// 			switch ($msgType){
+// 				case "event":
+// 					$result = $this->receiveEvent($message);
+// 					break;
 			
-				case "text":
-					$result = $this->receiveText($message);
-					break;
+// 				case "text":
+// 					$result = $this->receiveText($message);
+// 					break;
 						
-				case "image":
-					$result = $this->receiveImage($message);
-					break;
+// 				case "image":
+// 					$result = $this->receiveImage($message);
+// 					break;
 						
-				case "location":
-					$result = $this->receiveLocation($message);
-					break;
+// 				case "location":
+// 					$result = $this->receiveLocation($message);
+// 					break;
 						
-				case "voice":
-					$result = $this->receiveVoice($message);
-					break;
+// 				case "voice":
+// 					$result = $this->receiveVoice($message);
+// 					break;
 			
-				case "video":
-					$result = $this->receiveVideo($message);
-					break;
+// 				case "video":
+// 					$result = $this->receiveVideo($message);
+// 					break;
 			
-				case "link":
-					$result = $this->receiveLink($message);
-					break;
+// 				case "link":
+// 					$result = $this->receiveLink($message);
+// 					break;
 						
-				default:
-					$result = "unknow msg type :".$msgType;
-					break;
-			}
+// 				default:
+// 					$result = "unknow msg type :".$msgType;
+// 					break;
+// 			}
 			
-			return $result;
+//			return $result;
 		}else {
 			$result = '';
 			echo $result;
