@@ -71,7 +71,8 @@ class WechatController extends BaseController{
 					break;
 			
 				case "text":
-					$result = $this->receiveText($message);
+					//$result = $this->receiveText($message);
+					return View::make('weixin.text')->with($message);
 					break;
 						
 				case "image":
@@ -99,7 +100,7 @@ class WechatController extends BaseController{
 					break;
 			}
 			
-			return $result;
+			//return $result;
 		}else {
 			$result = '';
 			echo $result;
