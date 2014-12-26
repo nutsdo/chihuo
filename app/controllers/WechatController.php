@@ -63,7 +63,7 @@ class WechatController extends BaseController{
 		$postMsg = file_get_contents('php://input');
 		if (!empty($postMsg)) {
 			$message = simplexml_load_string($postMsg, 'SimpleXMLElement', LIBXML_NOCDATA);
-			$msgType = trim($message->MsgType);
+			$msgType = $message->MsgType;
 			
 			switch ($msgType){
 				case "event":
