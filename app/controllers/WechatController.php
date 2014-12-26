@@ -63,44 +63,43 @@ class WechatController extends BaseController{
 		$postMsg = file_get_contents('php://input');
 		if (!empty($postMsg)) {
 			$message = simplexml_load_string($postMsg, 'SimpleXMLElement', LIBXML_NOCDATA);
-			return View::make('weixin.index')->with('message', $message);
-//			$msgType = trim($message->MsgType);
+			$msgType = trim($message->MsgType);
 			
-// 			switch ($msgType){
-// 				case "event":
-// 					$result = $this->receiveEvent($message);
-// 					break;
+			switch ($msgType){
+				case "event":
+					$result = $this->receiveEvent($message);
+					break;
 			
-// 				case "text":
-// 					$result = $this->receiveText($message);
-// 					break;
+				case "text":
+					$result = $this->receiveText($message);
+					break;
 						
-// 				case "image":
-// 					$result = $this->receiveImage($message);
-// 					break;
+				case "image":
+					$result = $this->receiveImage($message);
+					break;
 						
-// 				case "location":
-// 					$result = $this->receiveLocation($message);
-// 					break;
+				case "location":
+					$result = $this->receiveLocation($message);
+					break;
 						
-// 				case "voice":
-// 					$result = $this->receiveVoice($message);
-// 					break;
+				case "voice":
+					$result = $this->receiveVoice($message);
+					break;
 			
-// 				case "video":
-// 					$result = $this->receiveVideo($message);
-// 					break;
+				case "video":
+					$result = $this->receiveVideo($message);
+					break;
 			
-// 				case "link":
-// 					$result = $this->receiveLink($message);
-// 					break;
+				case "link":
+					$result = $this->receiveLink($message);
+					break;
 						
-// 				default:
-// 					$result = "unknow msg type :".$msgType;
-// 					break;
-// 			}
+				default:
+					$result = "unknow msg type :".$msgType;
+					break;
+			}
 			
-//			return $result;
+			return $result;
 		}else {
 			$result = '';
 			echo $result;
