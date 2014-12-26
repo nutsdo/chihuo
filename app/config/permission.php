@@ -31,5 +31,10 @@ return array(
 		'category'=>array(
 			'category.index',
 		),
+		'wechat'=>array(
+			'wechat.menu',
+			'wechat.user',
+			'wechat.lottery',
+		),
 	),
 );

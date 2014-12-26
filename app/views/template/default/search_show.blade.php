@@ -38,7 +38,7 @@
 <div class="container">
 @foreach($res as $r)
   <div class="bs-callout bs-callout-info">
-    <a href="{{asset('post/'.$r->id)}}"><h4>{{preg_replace($ks,$kws,$r->title)}}</h4></a>
+    <a href="{{route('post_show',$r->id)}}"><h4>{{preg_replace($ks,$kws,$r->title)}}</h4></a>
     <p>{{preg_replace($ks,$kws,summary($r->content,200))}}</p>
   </div>
 @endforeach

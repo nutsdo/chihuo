@@ -168,6 +168,127 @@ Route::group(array('prefix'=>'admin','before'=>'adminAuth'),function (){
 		'uses' => '\admin\CategoryController@store'
 	));
 	
+	Route::get('wechat',array(
+		'as' => 'wechat.menu',
+		'uses' => '\admin\WechatController@menu'
+	));
+	Route::get('wechat/create',array(
+		'as' => 'wechat.create',
+		'uses' => '\admin\WechatController@create'
+	));
+	Route::post('wechat/store',array(
+		'as' => 'wechat.store',
+		'uses' => '\admin\WechatController@store'
+	));
+	Route::post('wechat/postmenu',array(
+		'as' => 'post-menu',
+		'uses' => '\admin\WechatController@postMenu'
+	));	
+	Route::get('wechat/edit/{id}',array(
+		'as' => 'menu-edit',
+		'uses' => '\admin\WechatController@edit'
+	));
+	Route::get('wechat/destroy/{id}',array(
+		'as' => 'menu-destroy',
+		'uses' => '\admin\WechatController@destroy'
+	));
+	
+	Route::post('wechat/update',array(
+		'as' => 'menu-update',
+		'uses' => '\admin\WechatController@update'
+	));
+	
+	Route::get('wechat/user',array(
+		'as' => 'wechat.user',
+		'uses' => '\admin\WechatController@user'
+	));
+	
+	/*------------------转盘------------------*/
+	
+	Route::get('wechat/lottery',array(
+		'as' => 'wechat.lottery',
+		'uses' => '\admin\LotteryController@index'
+	));
+	Route::get('wechat/lottery-create',array(
+		'as' => 'lottery-create',
+		'uses' => '\admin\LotteryController@create'
+	));
+	Route::post('wechat/lottery-store',array(
+		'as' => 'lottery-store',
+		'uses' => '\admin\LotteryController@store'
+	));
+	Route::get('wechat/lottery-edit/{id}',array(
+		'as' => 'lottery-edit',
+		'uses' => '\admin\LotteryController@edit'
+	));
+	Route::get('wechat/lottery-destroy/{id}',array(
+		'as' => 'lottery-destroy',
+		'uses' => '\admin\LotteryController@destroy'
+	));
+	
+	
+	
+	//view prize list
+	Route::get('wechat/prize-list',array(
+		'as' => 'prize-list',
+		'uses' => '\admin\LotteryController@prizeList'
+	));
+	// create prize 
+	Route::get('wechat/prize-create',array(
+		'as' => 'prize-create',
+		'uses' => '\admin\LotteryController@createPrize'
+	));
+	Route::post('wechat/prize-store',array(
+		'as' => 'prize-store',
+		'uses' => '\admin\LotteryController@storePrize'
+	));
+	//edit prize 
+	Route::get('wechat/prize-edit/{id}',array(
+		'as' => 'prize-edit',
+		'uses' => '\admin\LotteryController@editPrize'
+	));
+	//set prize
+// 	Route::get('wechat/prize-set/{id}',array(
+// 		'as' => 'prize-set',
+// 		'uses' => '\admin\LotteryController@setPrize'
+// 	));
+	//set prize
+	Route::get('wechat/lottery-prize/{id}',array(
+		'as' => 'lottery-prize',
+		'uses' => '\admin\LotteryController@setPrize'
+	));
+	//lottery prize add
+	Route::get('wechat/lottery-prize-add/{id}',array(
+		'as' => 'prize-lottery-add',
+		'uses' => '\admin\LotteryController@setPrizeAdd'
+	));
+	Route::post('wechat/lottery-prize-store',array(
+		'as' => 'prize-lottery-store',
+		'uses' => '\admin\LotteryController@setPrizeStore'
+	));
+	
+	Route::get('wechat/lottery-winner',array(
+		'as' => 'lottery-winner',
+		'uses' => '\admin\LotteryController@winner'
+	));
+	//转盘预览
+	Route::get('wechat/lottery-show/{id}',array(
+		'as' => 'lottery-show',
+		'uses' => '\admin\LotteryController@show'
+	));
+	
+	Route::post('wechat/lottery/{id}',array(
+		'as' => 'lottery-join',
+		'uses' => '\admin\LotteryController@join'
+	));
+// 	Route::get('wechat/lottery/{id}',array(
+// 		'as' => 'lottery-join',
+// 		'uses' => '\admin\LotteryController@join'
+// 	));
+	Route::post('wechat/lottery-award',array(
+		'as' => 'lottery-award',
+		'uses' => '\admin\LotteryController@award'
+	));
 });
 
 View::composer('layouts.main', function($view)

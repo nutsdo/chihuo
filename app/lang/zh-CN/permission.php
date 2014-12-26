@@ -27,4 +27,9 @@ return array(
 		
 		'category'  => '分类管理',
 		'category.index'  => '分类列表',
+		
+		'wechat'  => '微信功能',
+		'wechat.menu'  => '自定义菜单',
+		'wechat.user'  => '用户',
+		'wechat.lottery'  => '大转盘',
 );
