@@ -166,7 +166,7 @@ class WechatController extends BaseController{
 					break;
 			}
 			
-			echo $result;
+			return $result;
 		}else {
 			$result = '';
 			return $result;
