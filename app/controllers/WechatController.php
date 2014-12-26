@@ -64,7 +64,7 @@ class WechatController extends BaseController{
 		if (!empty($postMsg)) {
 			$message = simplexml_load_string($postMsg, 'SimpleXMLElement', LIBXML_NOCDATA);
 			$msgType = trim($message->MsgType);
-			return View::make('weixin.index')->with($message);
+			return View::make('weixin.index')->with('message',$message);
 // 			switch ($msgType){
 // 				case "event":
 // 					$result = $this->receiveEvent($message);
