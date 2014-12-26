@@ -225,9 +225,12 @@ class WechatController extends BaseController{
 		}else{
 			if (strstr($keyword,'文本')) {
 				$content = "这是个文本消息";
+			}else {
+				$content = $keyword;
+				$result = $this->transmitText($object, $content);
 			}
 		}
-		
+		return $result;
 		
 	}
 	//接收图片消息
