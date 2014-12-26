@@ -166,10 +166,11 @@ class WechatController extends BaseController{
 					break;
 			}
 			
-			return $result;
+			echo $result;
 		}else {
 			$result = '';
-			return $result;
+			echo $result;
+			exit();
 		}
 
 		
@@ -226,9 +227,9 @@ class WechatController extends BaseController{
 			if (strstr($keyword,'文本')) {
 				$content = "这是个文本消息";
 			}else {
-				$content = $keyword;
-				$result = $this->transmitText($object, $content);
+				$content = $keyword;				
 			}
+			$result = $this->transmitText($object, $content);
 		}
 		return $result;
 		
