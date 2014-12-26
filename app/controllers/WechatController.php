@@ -22,7 +22,7 @@ class WechatController extends BaseController{
 	}
 	//自定义回复
 	public function store(){
-		$this->responseMsg();
+		return $this->responseMsg();
 // 		$message = file_get_contents('php://input');
 //     	$message = simplexml_load_string($message, 'SimpleXMLElement', LIBXML_NOCDATA);
     	
