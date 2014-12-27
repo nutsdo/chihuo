@@ -64,16 +64,14 @@ class WechatController extends BaseController{
 		if (!empty($postMsg)) {
 			$message = simplexml_load_string($postMsg, 'SimpleXMLElement', LIBXML_NOCDATA);
 			$msgType = $message->MsgType;
-			
+			$result = '';
 			switch ($msgType){
 				case "event":
 					$result = $this->receiveEvent($message);
 					break;
 			
 				case "text":
-					//$result = $this->receiveText($message);
-					$object = $message;
-					return View::make('weixin.text')->with('object',$object);
+					$result = $this->receiveText($message);
 					break;
 						
 				case "image":
@@ -101,7 +99,7 @@ class WechatController extends BaseController{
 					break;
 			}
 			
-			//return $result;
+			return $result;
 		}else {
 			$result = '';
 			echo $result;
