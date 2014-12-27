@@ -10,8 +10,8 @@
  */ 
 ?>
 <xml>
-<ToUserName><![CDATA[{{$object->toUser}}]]></ToUserName>
-<FromUserName><![CDATA[{{$object->fromUser}}]]></FromUserName>
+<ToUserName><![CDATA[{{ $object->FromUserName }}]]></ToUserName>
+<FromUserName><![CDATA[{{ $object->ToUserName }}]]></FromUserName>
 <CreateTime>{{time()}}</CreateTime>
 <MsgType><![CDATA[text]]></MsgType>
 <MsgType><![CDATA[transfer_customer_service]]></MsgType>
