@@ -13,7 +13,7 @@ class WechatController extends BaseController{
 	
 	public function __construct()
 	{
-		//$this->beforeFilter('weixin', array('on' => 'get|post'));
+		$this->beforeFilter('weixin', array('on' => 'get|post'));
 	}
 
 	public function index()
@@ -23,39 +23,6 @@ class WechatController extends BaseController{
 	//自定义回复
 	public function store(){
 		return $this->responseMsg();
-// 		$message = file_get_contents('php://input');
-//     	$message = simplexml_load_string($message, 'SimpleXMLElement', LIBXML_NOCDATA);
-    	
-//     	$type='text';
-//     	$content='欢迎关注吃货小队';
-    	
-    	
-    	//查询数据库，匹配关键字
-//     	$keyword = $message->Content;
-//     	$tags = Tag::where('name','=',$keyword)->first();
-//     	if(empty($tags)){
-//     		$type=='text';
-//     		$content = '请输入精准的关键字^ ^';
-//     		return View::make('weixin.index')->with('message',$message)
-//     										 ->with('content',$content)
-//     										 ->with('type',$type);
-//     	}else{
-//     		$posts = Tag::find($tags->tag_id)->posts;
-//     		if(!empty($posts)){
-//     			$type=="news";
-//     			$count = count($posts);
-//     			return View::make('weixin.news')->with('posts', $posts)
-// 									    			->with('message',$message)
-// 									    			->with('count',$count)
-//     												->with('type',$type);
-//     		}else {
-//     			$type=='text';
-//     			$content = '请输入精准的关键字^ ^';
-//     			return View::make('weixin.index')->with('message',$message)
-//     												->with('content',$content)
-//     												->with('type',$type);
-//     		}
-//     	}
 	}
 	
 	//响应消息
@@ -63,15 +30,17 @@ class WechatController extends BaseController{
 		$postMsg = file_get_contents('php://input');
 		if (!empty($postMsg)) {
 			$message = simplexml_load_string($postMsg, 'SimpleXMLElement', LIBXML_NOCDATA);
-			$msgType = $message->MsgType;
-			$result = '';
-			switch ($msgType){
+			$Type = $message->MsgType;
+			
+			switch ($Type){
 				case "event":
 					$result = $this->receiveEvent($message);
 					break;
 			
 				case "text":
 					$result = $this->receiveText($message);
+					// $object = $message;
+					// return View::make('weixin.text')->with('object',$object);
 					break;
 						
 				case "image":
@@ -95,7 +64,7 @@ class WechatController extends BaseController{
 					break;
 						
 				default:
-					$result = "unknow msg type :".$msgType;
+					$result = "unknow msg type :".$Type;
 					break;
 			}
 			
