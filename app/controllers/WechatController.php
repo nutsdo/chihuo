@@ -39,8 +39,6 @@ class WechatController extends BaseController{
 			
 				case "text":
 					$result = $this->receiveText($message);
-					// $object = $message;
-					// return View::make('weixin.text')->with('object',$object);
 					break;
 						
 				case "image":
@@ -112,11 +110,17 @@ class WechatController extends BaseController{
 				$content = "receive a new event: ".$object->Event;
 				break;
 		}
-		if (is_array($content)) {
-			
-		}
-		
-		return $result;
+		if(is_array($content)){
+            if (isset($content[0])){
+                $result = $this->transmitNews($object, $content);
+            }else if (isset($content['MusicUrl'])){
+                $result = $this->transmitMusic($object, $content);
+            }
+        }else{
+            $result = $this->transmitText($object, $content);
+        }
+
+        return $result;
 	}
 	
 	//接收文本消息

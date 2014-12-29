@@ -17,7 +17,7 @@ class CreateLotteryPrizeTable extends Migration {
 		Schema::create('lottery_prize', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('name');//奖品名称
+			$table->string('title');//奖品名称
 			$table->string('type');//奖品类型
 			$table->string('prize_sn'); //奖品兑换码
 			$table->string('prize_pic');  //奖品图片
