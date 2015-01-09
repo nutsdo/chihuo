@@ -20,6 +20,9 @@
 
 return array(
 	'admin'=>array(
+        'setting'=>array(
+            'setting.index'
+        ),
 		'user'=>array(
 			'user.index',
 			'user.group',

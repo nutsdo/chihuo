@@ -13,6 +13,9 @@ return array(
 */
 
 		'admin'       => '后台管理',
+        
+        'setting'       => '基本设置',
+        'setting.index'       => '设置首页',
 		
 		'post'        => '内容管理',
 		'post.index'  => '文章列表',

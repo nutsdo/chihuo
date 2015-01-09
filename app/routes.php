@@ -68,7 +68,13 @@ Route::group(array('prefix'=>'admin','before'=>'adminAuth'),function (){
 	
 	Route::controller('account','\admin\AdminController');
 //	Route::controller('user','\admin\UserController');
-
+    
+    //系统设置
+    Route::get('setting',array(
+        'as' => 'setting.index',
+        'uses' => '\admin\SettingController@index'
+    ));
+    //用户设置
 	Route::post('user',array(
 		'as' => 'user.create',
 		'uses' => '\admin\UserController@create'
@@ -94,7 +100,7 @@ Route::group(array('prefix'=>'admin','before'=>'adminAuth'),function (){
 		'uses' => '\admin\GroupController@index'
 	));
 	
-	//Route::controller('post','\admin\PostController');
+	//文章管理
 	Route::get('post',array(
 		'as' => 'post',
 		'uses' => '\admin\PostController@index'
@@ -289,24 +295,15 @@ Route::group(array('prefix'=>'admin','before'=>'adminAuth'),function (){
 		'as' => 'lottery-award',
 		'uses' => '\admin\LotteryController@award'
 	));
+             
+    /*  测试文件的路由  */
+    Route::get('setting',array(
+               'as' => 'setting',
+               'uses' => '\admin\SettingController@index'
+               ));
+             
+             
 });
 
-View::composer('layouts.main', function($view)
-{
-	if (Sentry::check()) {
-		$user = Sentry::getUser();
-		if (!$user->isSuperUser()) {
-			$id = $user->id;
-			// Find the user using the user id
-			$user = Sentry::getUserProvider()->findById($id);
-			// Get the user permissions
-			$has_permissions = $user->getMergedPermissions();
-			$permissions = Config::get('permission');
-			$view->with('permissions', $permissions)->with('has_permissions',$has_permissions);
-		}else {
-			$permissions = Config::get('permission');
-			$view->with('permissions', $permissions);
-		}	
-	}	
-});
+View::composer('layouts.main','PermissionComposer');
 	
