@@ -159,11 +159,11 @@ Route::filter('weixin', function()
 		// 加工出自己的 signature
 		$our_signature = array($token, $timestamp, $nonce);
 		sort($our_signature, SORT_STRING);
-		$our_signature = implode($our_signature);
-		$our_signature = sha1($our_signature);
+		$tmpStr = implode($our_signature);
+		$tmpStr = sha1($tmpStr);
 	
 		// 用自己的 signature 去跟请求里的 signature 对比
-		if ($our_signature != $signature) {
+		if ($tmpStr != $signature) {
 			return false;
 		}else{
 			return true;

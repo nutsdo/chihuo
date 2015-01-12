@@ -47,6 +47,21 @@ Route::get('post/access-token',array(
 /*微信接口*/
 Route::resource('weixin','WechatController');
 
+    //粉丝
+    Route::get('wechat/follow',array(
+    
+               'as' => 'wechat.follow',
+               'uses' => '\admin\WechatUserController@index'
+               
+    ));
+    //粉丝绑定操作
+    Route::get('wechat/bind/{openid}',array(
+               'as' => 'wechat.bind',
+                'uses' => 'WechatUserController@bind'
+               ));
+    
+    
+/***********************************/
 Route::get('admin/login',array(
 		'as' => 'admin.login',
 		'uses' => '\admin\SessionController@login'
