@@ -82,7 +82,7 @@ class WechatController extends BaseController{
 		$content = '';
 		switch ($object->Event){
 			case "subscribe": //关注事件
-				$content = '欢迎关注石家庄吃货小队';
+				$content = '欢迎关注石家庄吃货小队,点击<a href="##">成为会员绑定账号</a>';
 				$content .= (!empty($object->EventKey))?("\n来自二维码场景 ".str_replace("qrscene_","",$object->EventKey)):"";
 				break;
 			case "unsubscribe": //取消关注事件

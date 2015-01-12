@@ -147,13 +147,13 @@ Route::filter('adminAuth', function()
 Route::filter('weixin', function()
 {
 	//是否需要验证
-	if (Input::get('echostr')) {
+	//if (Input::get('echostr')) {
 		// 获取到微信请求里包含的几项内容
 		$signature = Input::get('signature');
 		$timestamp = Input::get('timestamp');
 		$nonce     = Input::get('nonce');
 	
-		// ninghao 是我在微信后台手工添加的 token 的值
+		// 微信后台手工添加的 token 的值
 		$token = 'chihuo';
 	
 		// 加工出自己的 signature
@@ -168,7 +168,7 @@ Route::filter('weixin', function()
 		}else{
 			return true;
 		}
-	}
+	//}
 });
 
 Route::filter('check',function(){
