@@ -5,6 +5,7 @@ use Validator;
 use Response;
 use Redirect;
 use Merchant;
+use Session;
 class MerchantController extends \Controller{
 	
 	protected $layout = "layouts.main";
