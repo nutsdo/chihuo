@@ -3,3 +3,4 @@
 .env.php
 /vendor/
 /public/uploads/
+/app/local

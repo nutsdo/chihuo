@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=7">
+<title>石家庄吃货小队详情页</title>
+<meta content="" name="keywords">
+<meta content="" name="description">
+<link href="css/index.css" rel="stylesheet" type="text/css"/>
+<script src="./js/jquery.js" type="text/javascript" type="text/javascript"></script>
+</head>
+<body>
+<!---->
+<div class="top">
+	<div class="topbar">
+		<div class="center">
+			<div class="right"><img src="./images/wbgz.jpg" /></div>
+			<div class="clear"></div>
+			<div class="logo">
+				<a href="#" target="_blank"><img src="./images/xd_logo.png" width="160" height="119"/></a>
+			</div>			
+		</div>
+	</div>
+</div>
+
+<div class="center">
+    <div class="center_bg">
+      <div class="cen_biao">
+      <form >
+       	<input type="text" name="name" id="username" class="name" placeholder="用户名"/>
+       	<input type="password" name="passwd" id="pwd" class="pwd" placeholder="密　码  "/>
+        <input type="submit" name="btnSubmit" id="btnsb" value="登陆" class="login_btn" />
+        <input type="submit" name="btnzc" id="btnzc" value="注册" class="login_zhuce" />
+      </form>
+      <div class="wangpwd"><a href="#">忘记密码</a></div>
+      </div>
+    </div>
+	
+</div>
+<!--页脚-->
+<div class="footer">
+	<div class="center">
+	工信部备案： 冀ICP备13015451号-1 ©2014 吃货小队 版权所有 <a href="" target="_blank">网站统计</a>
+	</div>
+</div>
+<div class="fixed_right">
+	<!--返回顶部-->
+	<script src="./js/sidebar1.js" type="text/javascript" type="text/javascript"></script>
+	<div id="sidebar"><a class="t_1">返回顶部</a></div>	
+	<!--qq客服-->
+	<div id="qq"><a class="t_1" onclick="showid('smallLay');"><img src="./images/qq.jpg" width="50" height="50"/></a></div>
+	<!--分享-->
+	<div id="share"></div>
+</div>
+
+<div id="smallLay" style="display:none;">芯晴网页特效丨CsrCode.Cn 欢迎您的光临！</div>	
+<script type="text/javascript">
+	function showid(idname){
+	var isIE = (document.all) ? true : false;
+	var isIE6 = isIE && ([/MSIE (\d)\.0/i.exec(navigator.userAgent)][0][1] == 6);
+	var newbox=document.getElementById(idname);
+	newbox.style.zIndex="9999";
+	newbox.style.display="block"
+	newbox.style.position = !isIE6 ? "fixed" : "absolute";
+	newbox.style.top =newbox.style.left = "50%";
+	newbox.style.marginTop = - newbox.offsetHeight / 2 + "px";
+	newbox.style.marginLeft = - newbox.offsetWidth / 2 + "px";  
+	var layer=document.createElement("div");
+	layer.id="layer";
+	layer.style.width=layer.style.height="100%";
+	layer.style.position= !isIE6 ? "fixed" : "absolute";
+	layer.style.top=layer.style.left=0;
+	<!--layer.style.backgroundColor="#EFEFEF";-->
+	<!--layer.style.opacity="0.6";-->
+	layer.style.zIndex="9998";
+	document.body.appendChild(layer);
+	var sel=document.getElementsByTagName("select");
+	for(var i=0;i<sel.length;i++){        
+	sel[i].style.visibility="hidden";
+	}
+	function layer_iestyle(){      
+	layer.style.width=Math.max(document.documentElement.scrollWidth, document.documentElement.clientWidth)
+	+ "px";
+	layer.style.height= Math.max(document.documentElement.scrollHeight, document.documentElement.clientHeight) +
+	"px";
+	}
+	function newbox_iestyle(){      
+	newbox.style.marginTop = document.documentElement.scrollTop - newbox.offsetHeight / 2 + "px";
+	newbox.style.marginLeft = document.documentElement.scrollLeft - newbox.offsetWidth / 2 + "px";
+	}
+	if(isIE){layer.style.filter ="alpha(opacity=60)";}
+	if(isIE6){  
+	layer_iestyle()
+	newbox_iestyle();
+	window.attachEvent("onscroll",function(){                              
+	newbox_iestyle();
+	})
+	window.attachEvent("onresize",layer_iestyle)          
+	}  
+	layer.onclick=function(){newbox.style.display="none";layer.style.display="none";for(var i=0;i<sel.length;i++){
+	sel[i].style.visibility="visible";
+	}}
+	}
+</script>
+</body>
+</html>

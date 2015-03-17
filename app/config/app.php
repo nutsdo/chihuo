@@ -122,7 +122,8 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Cartalyst\Sentry\SentryServiceProvider',
-		'Teepluss\Categorize\CategorizeServiceProvider'
+		'Teepluss\Categorize\CategorizeServiceProvider',
+        'Mews\Captcha\CaptchaServiceProvider',
 	),
 
 	/*
@@ -190,6 +191,7 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
 		'Sentry' => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
+        'Captcha' => 'Mews\Captcha\Facades\Captcha',
 	),
 
 );

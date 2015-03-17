@@ -33,7 +33,9 @@
 	<div class="mtop40">
 		@yield('nav')
 	</div>
+    @yield('page')
 	<div class="cen cen_1">
+
 		@yield('left')
 		<div class="right">
 			<!--微信-->

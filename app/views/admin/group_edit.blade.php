@@ -78,7 +78,7 @@
 	                                 <input type="text" class="span6 popovers" id="groupname" name="groupname" value="{{$group->name}}" data-trigger="hover" data-content="请输入用户组，为英文，并具实际意义" data-original-title="提示" />
 	                              </div>
 	                           </div>
-	                           @foreach($permission as $k=>$p)		                           
+	                           @foreach($permission as $k=>$p)
 	                           <div class="control-group">
 	                             <div class="row-fluit">
 	                                    <label class="control-label span3">{{Lang::get('permission.'.$k)}}</label>

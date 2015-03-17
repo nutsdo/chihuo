@@ -83,8 +83,8 @@ h1,h3{font-weight:normal;}
 .n2{height:14px;background:#FFF url(../images/bo2.jpg) no-repeat;}
 .comment{padding:0px 35px 180px;background:#fff;}
 /*
-.comments{min-height:420px;background:#000;}
-*/
+ .comments{min-height:420px;background:#000;}
+ */
 .prev_next a{font-size:14px;color:#666666;}
 #share:hover{background:url(../images/out_h.jpg) no-repeat center top;height:50px;width:50px;}
 #qq{cursor:pointer;margin-bottom:5px;}
@@ -97,18 +97,38 @@ h1,h3{font-weight:normal;}
 .fixxd{position:fixed;top:0px;width:320px;height:532px;overflow:hidden;}
 .wx{margin-bottom:20px;}
 @media (max-width: 800px){
-	.center{
-		width:100%;
-	}
-	.cen .right{
-		display:none;
-	}
-	.cen_logo img{
-		width:100%;
-		height:auto;
-	}
-	.new_pic{
-		display:block;
-		width:100%;
-	}
+    .center{
+        width:100%;
+    }
+    .cen .right{
+        display:none;
+    }
+    .cen_logo img{
+        width:100%;
+        height:auto;
+    }
+    .new_pic{
+        display:block;
+        width:100%;
+    }
 }
+/*清除自动填充表单input背景*/
+input:-webkit-autofill{
+    -webkit-box-shadow:0 0 0px 10000px white inset;
+}
+
+/*登录注册页面样式*/
+.center_bg{ width:1010px; height:650px; background:url(../images/login_bj_03.jpg) no-repeat;text-align:center;}
+.cen_biao{ width:370px; height:320px; margin-left:330px; padding-top:190px; color:#FFF;}
+.name{width:300px; height:30px; border-bottom:1px solid #FFF; background:url(../images/xiaoren.png) no-repeat; color:#FFF; text-align:left; padding:8px 0 0 30px; font-family:"方正兰亭黑简体"; font-size:18px; margin-bottom:20px;}
+.pwd{width:300px; height:28px; border-bottom:1px solid #FFF; background:url(../images/suo.png) no-repeat; color:#FFF; text-align:left; padding:10px 0 0 30px; font-family:"方正兰亭黑简体"; font-size:18px;margin-bottom:30px;}
+.login_btn{ border-radius:2px; background:#33cccc; width:330px; height:50px; color:#FFF; font-family:"方正兰亭黑简体"; font-size:18px;text-align:center;margin-bottom:20px;cursor:pointer;}
+.login_zhuce{ border-radius:2px; background:rgba(255, 255, 255, 0.7)!important; filter:alpha(opacity=60); opacity: 0.60;  width:330px; height:50px;font-family:"方正兰亭黑简体"; font-size:18px;text-align:center;cursor:pointer;}
+.reg{ color:#fff;font-family:"方正兰亭黑简体"; font-size:18px;text-align:center;}
+.wangpwd{ text-align:right; font-family:"方正兰亭黑简体"; font-size:12px; color:#FFF; padding-top:10px; padding-right:20px;}
+.wangpwd a{font-family:"方正兰亭黑简体"; font-size:12px; color:#FFF;}
+.username { border:1px solid #fff; font-size: 14px; background: none transparent scroll repeat 0% 0%; margin: 0px; width: 250px; color: #ffffff; height: 30px; text-align: left; margin:0 0 20px 10px;}
+.inputcss{ width:230px;text-align:left; padding-left:13px; margin-bottom:20px; float:left;}
+.code{ border:1px solid #fff; font-size: 14px; background: none transparent scroll repeat 0% 0%; width: 130px; color: #ffffff; height: 30px; text-align: left; margin-left:14px; }
+.yzm{ width:80px; height:28px; float:left; margin-top:2px;}
+/*登录注册页面样式结束*/

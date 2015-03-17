@@ -29,10 +29,11 @@ class GroupController extends \Controller{
 	public function edit($id){
 		//用户组权限
 		$group = Sentry::findGroupById($id);
+        var_dump($group);
 		//所有权限
 		$permission = Config::get('permission');
-		return View::make('admin.group_edit')->withGroup($group)
-											 ->withPermission($permission);
+//		return View::make('admin.group_edit')->withGroup($group)
+//											 ->withPermission($permission);
 	}
 	
 	public function update(){

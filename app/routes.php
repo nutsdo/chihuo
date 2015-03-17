@@ -15,6 +15,18 @@ Route::get('/',array(
 	'as' => 'post_show',
 	'uses' => 'PostController@index'
 ));
+    
+//注册
+Route::get('register',array(
+    'as' => 'register.index',
+    'uses' => 'RegisterController@index'
+
+));
+//
+    Route::post('register',array(
+        'as'=>'register.store',
+        'uses'=>'RegisterController@store'
+    ));
 Route::get('search',array(
 	'as' => 'search.index',
 	'uses' => 'SearchController@index'
@@ -47,19 +59,22 @@ Route::get('post/access-token',array(
 /*微信接口*/
 Route::resource('weixin','WechatController');
 
-    //粉丝
-    Route::get('wechat/follow',array(
-    
-               'as' => 'wechat.follow',
-               'uses' => '\admin\WechatUserController@index'
-               
-    ));
-    //粉丝绑定操作
-    Route::get('wechat/bind/{openid}',array(
-               'as' => 'wechat.bind',
-                'uses' => 'WechatUserController@bind'
-               ));
-    
+//粉丝
+Route::get('wechat/follow',array(
+   'as' => 'wechat.follow',
+   'uses' => '\admin\WechatUserController@index'
+           
+));
+//粉丝绑定操作
+Route::get('wechat/bind/{openid}/{appid}',array(
+    'as' => 'wechat.bind',
+    'uses' => 'WechatUserController@bind'
+));
+
+Route::get('wechat/merchant',array(
+    'as' => 'wechat.merchant',
+    'uses' => 'WechatController@merchant'
+));
     
 /***********************************/
 Route::get('admin/login',array(
@@ -223,7 +238,29 @@ Route::group(array('prefix'=>'admin','before'=>'adminAuth'),function (){
 		'as' => 'wechat.user',
 		'uses' => '\admin\WechatController@user'
 	));
-	
+	/*---------------------------------------*/
+	Route::get('wechat/merchant',array(
+		'as' => 'wechat.merchant',
+		'uses' => '\admin\MerchantController@index'
+	));
+	Route::get('wechat/merchant/create',array(
+		'as' => 'merchant-create',
+		'uses' => '\admin\MerchantController@create'
+	));
+	Route::post('wechat/merchant/store',array(
+		'as' => 'merchant-store',
+		'uses' => '\admin\MerchantController@store'
+	));
+	Route::post('wechat/merchant/{id}/edit',array(
+		'as' => 'merchant-edit',
+		'uses' => '\admin\MerchantController@edit'
+	));
+	Route::post('wechat/merchant/{id}/delete',array(
+		'as' => 'merchant-delete',
+		'uses' => '\admin\MerchantController@delete'
+	));
+
+
 	/*------------------转盘------------------*/
 	
 	Route::get('wechat/lottery',array(
