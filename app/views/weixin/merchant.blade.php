@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>吃货小队－优质商家</title>
+<title>石家庄吃货小队</title>
   {{HTML::style('packages/merchant/css/idangerous.swiper.css')}}
   {{HTML::style('packages/merchant/assets/css/amazeui.min.css')}}
   {{HTML::style('packages/merchant/assets/css/app.css')}}
@@ -88,7 +88,7 @@ body {
     @endforeach
   </ul>
 </div>
-<!-- {{HTML::script('packages/merchant/js/jquery-1.10.1.min.js')}}
+{{HTML::script('packages/merchant/js/jquery-1.10.1.min.js')}}
 {{HTML::script('packages/merchant/js/idangerous.swiper.min.js')}}
 <script>
   var holdPosition = 0;
@@ -112,34 +112,33 @@ body {
     }
   })
   var slideNumber = 0;
-  function loadNewSlides(){
-	var list =  '<div class="title">'+
-				'<div class="am-gallery-item">'+
-				  '<a href="#" class="">'+
-					'{{HTML::image("packages/merchant/img/tu.jpg")}}'+
-					'<span class="name">远方 有一个地方我们的梦想</span>'+
-					'<span class="content">我们的梦想</span>'+
-				  '</a>'+
-				'</div>'+
-			  '</div>';
-    setTimeout(function(){
-      //Prepend new slide
-      var colors = ['red','blue','green','orange','pink'];
-      var color = colors[Math.floor(Math.random()*colors.length)];
-      mySwiper.prependSlide(list, 'swiper-slide '+color+'-slide');
-      //Release interactions and set wrapper
-      mySwiper.setWrapperTranslate(0,0,0)
-      mySwiper.params.onlyExternal=false;
-      //Update active slide
-      mySwiper.updateActiveSlide(0)
-      //Hide loader
-      $('.preloader').removeClass('visible');
-    },1000)
-    slideNumber++;
-  }
+//  function loadNewSlides(){
+//	var list =  '<div class="title">'+
+//				'<div class="am-gallery-item">'+
+//				  '<a href="#" class="">'+
+//					'{{HTML::image("packages/merchant/img/tu.jpg")}}'+
+//					'<span class="name">远方 有一个地方我们的梦想</span>'+
+//					'<span class="content">我们的梦想</span>'+
+//				  '</a>'+
+//				'</div>'+
+//			  '</div>';
+//    setTimeout(function(){
+//      //Prepend new slide
+//      var colors = ['red','blue','green','orange','pink'];
+//      var color = colors[Math.floor(Math.random()*colors.length)];
+//      mySwiper.prependSlide(list, 'swiper-slide '+color+'-slide');
+//      //Release interactions and set wrapper
+//      mySwiper.setWrapperTranslate(0,0,0)
+//      mySwiper.params.onlyExternal=false;
+//      //Update active slide
+//      mySwiper.updateActiveSlide(0)
+//      //Hide loader
+//      $('.preloader').removeClass('visible');
+//    },1000)
+//    slideNumber++;
+//  }
   </script>
- -->  
-  
+
   
   <script type="text/javascript">
 
