@@ -38,6 +38,7 @@ return array(
 			'wechat.menu',
 			'wechat.user',
 			'wechat.lottery',
+            'wechat.merchant',
 		),
 	),
 );

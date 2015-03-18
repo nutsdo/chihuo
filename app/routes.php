@@ -251,11 +251,15 @@ Route::group(array('prefix'=>'admin','before'=>'adminAuth'),function (){
 		'as' => 'merchant-store',
 		'uses' => '\admin\MerchantController@store'
 	));
-	Route::post('wechat/merchant/{id}/edit',array(
+	Route::get('wechat/merchant/{id}/edit',array(
 		'as' => 'merchant-edit',
 		'uses' => '\admin\MerchantController@edit'
 	));
-	Route::post('wechat/merchant/{id}/delete',array(
+    Route::get('wechat/merchant/update',array(
+        'as' => 'merchant-update',
+        'uses' => '\admin\MerchantController@update'
+    ));
+	Route::get('wechat/merchant/{id}/delete',array(
 		'as' => 'merchant-delete',
 		'uses' => '\admin\MerchantController@delete'
 	));

@@ -35,4 +35,5 @@ return array(
 		'wechat.menu'  => '自定义菜单',
 		'wechat.user'  => '用户',
 		'wechat.lottery'  => '大转盘',
+        'wechat.merchant' => '商家管理'
 );
