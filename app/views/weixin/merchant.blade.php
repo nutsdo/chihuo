@@ -77,10 +77,10 @@ body {
     <li class="swiper-slide red-slide">
       <div class="title">
 		<div class="am-gallery-item">
-		  <a href="#" class="">
+		  <a href="{{$m->url}}" class="">
 			{{HTML::image($m->cover)}}
 			<span class="name">{{$m->title}}</span>
-			<span class="content">{{$m->name}}}</span>
+			<span class="content">{{$m->name}}</span>
 		  </a>
 		</div>
 	  </div>

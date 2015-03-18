@@ -6,7 +6,7 @@
 .name{
 text-align:left;
 font-weight: 400;
-font-size: 1.0em;
+font-size: 1.2em;
 color: #FFF;
 position: absolute;
 top:70%;
@@ -21,7 +21,7 @@ overflow: hidden;}
 background:url(../../img/icon.png) no-repeat;
 text-align:left; 
 font-weight: 400;
-font-size: 0.8em;
+font-size: 1em;
 color: #FFF;
 position: absolute;
 top:85%;
