@@ -9,9 +9,6 @@
   {{HTML::style('packages/merchant/assets/css/index-list.css')}}
 <meta name="viewport" content="width=device-width">
 <style>
-html {
-	height: 100%;
-}
 body {
 	margin: 0;
 	position: relative;
