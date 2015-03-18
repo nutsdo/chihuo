@@ -103,12 +103,12 @@ body {
       holdPosition = pos;
     },
     onTouchEnd: function(){
-      if (holdPosition>100) {
-        mySwiper.setWrapperTranslate(0,30,0)
-        mySwiper.params.onlyExternal=true
-        $('.preloader').addClass('visible');
-        loadNewSlides();
-      }
+//      if (holdPosition>100) {
+//        mySwiper.setWrapperTranslate(0,30,0)
+//        mySwiper.params.onlyExternal=true
+//        $('.preloader').addClass('visible');
+//        loadNewSlides();
+//      }
     }
   })
   var slideNumber = 0;
