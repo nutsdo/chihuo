@@ -255,7 +255,7 @@ Route::group(array('prefix'=>'admin','before'=>'adminAuth'),function (){
 		'as' => 'merchant-edit',
 		'uses' => '\admin\MerchantController@edit'
 	));
-    Route::get('wechat/merchant/update',array(
+    Route::post('wechat/merchant/update',array(
         'as' => 'merchant-update',
         'uses' => '\admin\MerchantController@update'
     ));

@@ -64,7 +64,7 @@
 				<div class="widget">
 					<div class="widget-title">
 						<h4>
-							<i class="icon-reorder"></i>文章修改
+							<i class="icon-reorder"></i>商家信息修改
 						</h4>
 						<span class="tools"> <a href="javascript:;"
 							class="icon-chevron-down"></a> <a href="javascript:;"
@@ -73,74 +73,71 @@
 					</div>
 					<div class="widget-body form">
 						<!-- BEGIN FORM-->
-						{{ Form::open(array( 'route' => 'post.update', 'id' => 'addform',
+						{{ Form::open(array( 'route' => 'merchant-update', 'id' => 'addform',
 						'class' => 'form-horizontal', 'role' => 'form', 'enctype' =>
 						'multipart/form-data' )) }}
-						{{Form::hidden('post_id',$post->id)}}
-						<div class="control-group">
-							<label class="control-label">标题</label>
-							<div class="controls">
-								<input type="text" class="span6 popovers" id="title"
-									name="title" value="{{$post->title}}" data-trigger="hover"
-									data-content="请输入文章标题" data-original-title="提示" />
-							</div>
-						</div>
-						<div class="control-group">
-							<label class="control-label">作者</label>
-							<div class="controls">
-								<input type="text" class="span6  popovers" id="author"
-									name="author" value="{{$post->author}}" data-trigger="hover"
-									data-content="请输入文章作者" data-original-title="提示" />
-							</div>
-						</div>
-						<div class="control-group">
-							<label class="control-label">发布日期</label>
-							<div class="controls">
-								<div class="input-append date date-picker" data-date="9-23-2014"
-									data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-									<input class=" m-ctrl-medium date-picker" id="post_time"
-										name="post_time" size="16" type="text"
-										value="{{$post->post_time}}" /><span class="add-on"><i
-										class="icon-calendar"></i></span>
-								</div>
-							</div>
-						</div>
-						<div class="control-group">
-							<label class="control-label">封面</label>
-							<div class="controls">
-								<div class="fileupload fileupload-new"
-									data-provides="fileupload">
-									<div class="fileupload-new thumbnail"
-										style="width: 200px; height: 150px;">
-										<img src="{{asset($post->cover)}}" alt="{{$post->title}}" />
-									</div>
-									<div class="fileupload-preview fileupload-exists thumbnail"
-										style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
-									<div>
-										<span class="btn btn-file"><span class="fileupload-new">选择图片</span>
-											<span class="fileupload-exists">选择</span> <input type="file"
-											class="default" id="cover" name="cover" /></span> <a href="#"
-											class="btn fileupload-exists" data-dismiss="fileupload">移除</a>
-									</div>
-								</div>
-								<span class="label label-important">NOTE!</span> <span>
-									附件图片只支持最新版本的Firefox、Chrome、Opera、Safari和IE10以上版本。 </span>
-							</div>
-						</div>
-						<div class="control-group">
-							<label class="control-label">文章内容</label>
-							<div class="controls">
-								<textarea class="span12" id="ueditor" name="content" rows="6">{{$post->content}}</textarea>
-							</div>
-						</div>
-						<div class="control-group">
-							<label class="control-label">标签</label>
-							<div class="controls">
-								<input id="tags_1" type="text" name="tags" class="m-wra tags"
-									value="{{$tag}}" />
-							</div>
-						</div>
-						<div class="form-actions">
+						{{Form::hidden('id',$merchant->id)}}
+                        <div class="control-group @if($errors->first('name')) error @endif">
+                            <label class="control-label">商家名称</label>
+                            <div class="controls">
+                                <input type="text" class="span6 popovers" id="name" name="name" value="{{$merchant->name}}" data-trigger="hover" data-content="请输入文章标题" data-original-title="提示" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">标题</label>
+                            <div class="controls">
+                                <input type="text" class="span6  popovers" id="title" name="title" value="{{$merchant->title}}" data-trigger="hover" data-content="请输入文章作者" data-original-title="提示" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">封面</label>
+                            <div class="controls">
+                                <div class="fileupload fileupload-new" data-provides="fileupload">
+                                    <div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
+                                        {{HTML::image($merchant->cover)}}
+                                    </div>
+                                    <div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
+                                    <div>
+                                        <span class="btn btn-file"><span class="fileupload-new">选择图片</span>
+                                            <span class="fileupload-exists">选择</span>
+                                            <input type="file" class="default" id="cover" name="cover" /></span>
+                                        <a href="#" class="btn fileupload-exists" data-dismiss="fileupload">移除</a>
+                                    </div>
+                                </div>
+                                <span class="label label-important">NOTE!</span>
+                                <span>
+		                                 	附件图片只支持最新版本的Firefox、Chrome、Opera、Safari和IE10以上版本。
+                                </span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">微信链接</label>
+                            <div class="controls">
+                                <input type="text" class="span6  popovers" id="url" name="url" value="{{$merchant->url}}" data-trigger="hover" data-content="请输入微信文章链接" data-original-title="提示" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">排序</label>
+                            <div class="controls">
+                                <input type="text" class="span6  popovers" id="sort" name="sort" value="{{$merchant->sort}}" data-trigger="hover" data-content="p排序" data-original-title="提示"  />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">置顶</label>
+                            <div class="controls">
+                                <label class="radio">
+                                    <div class="radio" id="uniform-undefined">
+                                        <span class="checked"><input type="radio" name="is_top" @if($merchant->is_top==0) checked="" @endif value="1" style="opacity: 0;"></span>
+                                    </div>是
+                                </label>
+                                <label class="radio">
+                                    <div class="radio" id="uniform-undefined">
+                                        <span class=""><input type="radio" name="is_top" value="0" @if($merchant->is_top==0) checked="" @endif style="opacity: 0;"></span>
+                                    </div>否
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-actions">
 							<button type="submit" id="btn-add-user" class="btn btn-success">更新修改</button>
 							<button type="button" class="btn">取消</button>
 						</div>

@@ -92,18 +92,8 @@ class MerchantController extends \Controller{
 	
 	public function edit($id){
 		//查询数据库
-		$post = Post::find($id);
-		$tags = Post::find($id)->tag;
-		$tag = '';
-		foreach ($tags as $k=>$t){
-			if ($k>0) {
-				$tag .= ','.$t->name;
-			}else {
-				$tag = $t->name;
-			}	
-		}
-		return View::make('admin.post_edit')->withPost($post)
-											->withTag($tag);
+		$merchant = Merchant::find($id);
+		return View::make('admin.wechat.merchant.edit')->withMerchant($merchant);
 	}
 	
 	public function update(){
@@ -115,20 +105,19 @@ class MerchantController extends \Controller{
 		$rules = array(
 				'title' => 'required|min:3|max:128'
 		);
-		$cover = '';
-		$title = Input::get( 'title' );
-		$author = Input::get( 'author' );
-		$post_time = Input::get('post_time');
-		$content = Input::get('content');
-		$tags = Input::get('tags');
-		$tag = explode(',',$tags);
-		$post_id = Input::get('post_id');
-		if (Input::hasFile('cover')) {
+        $cover = '';
+        $merchant_id = Input::get('id');
+        $name = Input::get( 'name' );
+        $title = Input::get( 'title' );
+        $url = Input::get('url');
+        $sort = Input::get('sort');
+        $is_top = Input::get('is_top');
+        if (Input::hasFile('cover')) {
 			$file = Input::file('cover');
 			$ext = $file->guessClientExtension();
 			$filename = $file->getClientOriginalName();
 			if ($filename) {
-				$r = Post::find($post_id);
+				$r = Merchant::find($merchant_id);
 				if ($r->cover) {
 					$r->cover = '';
 					$r->save();
@@ -138,49 +127,35 @@ class MerchantController extends \Controller{
 			$file->move(public_path().'/uploads/images/cover', md5(date('YmdHis').$filename).'.'.$ext);
 			$cover = '/uploads/images/cover/'.md5(date('YmdHis').$filename).'.'.$ext;
 		}else {
-			$r = Post::find($post_id);
+			$r = Merchant::find($merchant_id);
 			$cover = $r->cover;
 		}
 		//.....
 		//validate data
 		//and then store it in DB
-		$new_post = array(
-				'title' => $title,
-				'author' => $author,
-				'post_time' => $post_time,
-				'cover' => $cover,
-				'content' => $content,
+		$new_merchant = array(
+              'name' => $name,
+              'title' => $title,
+              'url' => $url,
+              'sort' => $sort,
+              'cover' => $cover,
+              'is_top' => $is_top,
 		);
 		
-		$v = Validator::make($new_post, $rules);
+		$v = Validator::make($new_merchant, $rules);
 		if ($v->fails()) {
-			return Redirect::to('admin/post/add');
+			return Redirect::to('admin/wechat/merchant/'.$merchant_id.'/edit')->withErrors($v);
 		}else {
-			$post = Post::find($post_id);
-			$post->title = $title;
-			$post->author = $author;
-			$post->post_time = $post_time;
-			$post->cover = $cover;
-			$post->content = $content;
-			$post->views = rand(800,1200);
-			$post->user_id = Sentry::getUser()->id;
-			$post->save();
-			if ($post->id) {
-				DB::table('tag_item')->where('post_id', '=', $post_id)->delete();	
-				foreach ($tag as $v){
-					//查询标签数据库
-					//判断是否存在标签
-					$t = new Tag;
-					$res = Tag::where('name','=',$v)->first();
-					if ($res) {
-						Post::find($post->id)->tag()->save($res);
-					}else{				
-						$t->name = $v;
-						$t->save();
-						Post::find($post->id)->tag()->save($t);
-					}	
-				}
-				return Redirect::to('admin/post');
+			$merchant = Merchant::find($merchant_id);
+            $merchant->name = $name;
+            $merchant->title = $title;
+            $merchant->url = $url;
+            $merchant->cover = $cover;
+            $merchant->sort = $sort;
+            $merchant->is_top = $is_top;
+            $merchant->save();
+            if ($merchant->id) {
+				return Redirect::to('admin/wechat/merchant');
 			}
 		}
 	}
