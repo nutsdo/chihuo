@@ -214,6 +214,14 @@ body {
 <div id="cover"></div>
 
 <div id="guide">{{HTML::image('packages/merchant/img/guide1.png')}}</div>
-  
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+     var hm = document.createElement("script");
+     hm.src = "//hm.baidu.com/hm.js?2abbea738c9249f6a7e118828e4bbd36";
+     var s = document.getElementsByTagName("script")[0];
+     s.parentNode.insertBefore(hm, s);
+     })();
+</script>
 </body>
 </html>
