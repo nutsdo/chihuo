@@ -7,9 +7,13 @@
   {{HTML::style('packages/merchant/assets/css/amazeui.min.css')}}
   {{HTML::style('packages/merchant/assets/css/app.css')}}
   {{HTML::style('packages/merchant/assets/css/index-list.css')}}
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+<meta name="Keywords" content="石家庄，石家庄吃货小队，吃货小队，吃货，小队" />
+<meta name="description" content="石家庄吃货小队优质商家推荐，石家庄，石家庄吃货小队，吃货小队，吃货，小队" />
 <style>
+html{height:100%}
 body {
+    height:100%;
 	margin: 0;
 	position: relative;
 	height: 100%;
@@ -93,6 +97,7 @@ body {
     slidesPerView:'auto',
     mode:'vertical',
     watchActiveIndex: true,
+    mousewheelControl : true,
     onTouchStart: function() {
       holdPosition = 0;
     },
