@@ -44,13 +44,13 @@ class WechatController extends BaseController{
         //添加到数据库
         
         //绑定成功，返回文本消息，提示绑定成功
-        return “绑定成功”;
+        return "绑定成功";
         //return transmitText($object,$content);
     }
     
 
     public function merchant(){
-        $merchants = Merchant::all();
+        $merchants = Merchant::orderBy('is_top','sort','create_at')->get();
         return View::make('weixin.merchant')->with('merchants',$merchants);
     }
     
