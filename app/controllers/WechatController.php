@@ -50,7 +50,7 @@ class WechatController extends BaseController{
     
 
     public function merchant(){
-        $merchants = Merchant::orderBy('is_top','sort','create_at')->get();
+        $merchants = Merchant::orderBy('is_top','sort','update_at')->get();
         return View::make('weixin.merchant')->with('merchants',$merchants);
     }
     
