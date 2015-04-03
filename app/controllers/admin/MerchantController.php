@@ -12,7 +12,7 @@ class MerchantController extends \Controller{
 	
 	public function index(){
 		//查询数据库
-		$merchants = Merchant::orderBy('created_at')->Paginate(15);
+		$merchants = Merchant::orderBy('sort','ASC')->Paginate(15);
 		return View::make('admin.wechat.merchant.index')->withMerchants($merchants);
 	}
 	

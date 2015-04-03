@@ -127,7 +127,7 @@
                             <div class="controls">
                                 <label class="radio">
                                     <div class="radio" id="uniform-undefined">
-                                        <span class="checked"><input type="radio" name="is_top" @if($merchant->is_top==0) checked="" @endif value="1" style="opacity: 0;"></span>
+                                        <span class="checked"><input type="radio" name="is_top" @if($merchant->is_top==1) checked="" @endif value="1" style="opacity: 0;"></span>
                                     </div>是
                                 </label>
                                 <label class="radio">
